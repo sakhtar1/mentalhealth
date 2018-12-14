@@ -3,10 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/runtime": "^7.2.0",
+    "ajv": "^6.6.1",
+    "babel": "^6.23.0",
+    "google-map-react": "^1.1.1",
+    "google-maps-react": "^2.0.2",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
+    "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "react-zipcode": "^1.0.0",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
