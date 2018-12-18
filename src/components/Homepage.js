@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import {GoogleApiWrapper} from 'google-maps-react'
+import { GoogleComponent } from 'react-google-location' 
 import GoogleMapReact from 'google-map-react';
 import Zip from 'react-zipcode'
+import Bulma from 'bulma'
 
 
 const Homepage = () => {
 
 		  return (
-		    <div>
-          <div>
-            <h1> Mental Health </h1>
-            </div>
-          <div>
+		    <div className="column">
+          <div className="column">
+            <h1 className="title"> Mental Health </h1>
+          </div>
+          <div className="column">
             <p> Mental disordered are believed by most people as rare and something that can nver happen to them
             or their family members. However, mental disorders are very common with an estimated 54 million Americans 
             suffering from a form of mental disorder in a given year. </p>
@@ -24,22 +26,60 @@ const Homepage = () => {
 		       <p> Enter the zipcode for a mental health clinic near you: </p>
           </div>
           <div>
-    				<select id="placetype">
-              <option value="clinic">Mental Health Clinic</option>
-              <option value="hospital">Hospital</option>
-              <option value="urgentCare">Urgent Care</option>           
-            </select>
+          <HomeComponent />
+    				
+
       
-            <button>&nbsp;Search&nbsp;</button>
+            
           </div>
 		       <br/>
 		       <div>
 		       	<SimpleMap />
+            
 		       </div>
 		    </div>
 		  );
 		};
 
+const API_KEY = 'AIzaSyD7E2A6vrmhI4LKrK5SKeYTkB-JZ2Zxtd8'  
+ 
+class HomeComponent extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      place: null,
+    };
+  }
+
+   placeSearch(google){
+    var input = document.getElementById('search');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+  }
+ 
+  render() {
+    return (
+      <div className="column">
+        <div className="field"> 
+          <GoogleComponent
+           
+            apiKey={API_KEY}
+            language={'en'}
+            country={'country:us'}
+            coordinates={true}
+            //locationBoxStyle={'custom-style'}
+            locationListStyle={'custom-style-list'}
+            onChange={(e) => { this.setState({ place: e }) }} />
+          </div>
+        <button className="button is-primary">Search</button>
+      </div>
+ 
+    )
+  } 
+}
+ 
+ 
+ 
+ 
 
  
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
