@@ -18,7 +18,8 @@ body {
 	background-color: white;
 }
 
-   .header { box-sizing: border-box;
+   .header { 
+    box-sizing: border-box;
     position: absolute;
     top: 20px;
     left: 0;

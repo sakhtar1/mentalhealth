@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom';
 import Router from './Router';
 
 
-const Navigation = (props) => <nav> 
+const Navigation = (props) => 
+<nav> 
   <ul className='header'>
-  <li><NavLink to='/'>Mental Health</NavLink></li>
+    <li><NavLink to='/'>Mental Health</NavLink></li>
     <li><NavLink to='/Health'>Health</NavLink></li>
     <li><NavLink to='/articles'>Articles</NavLink></li>
   </ul>

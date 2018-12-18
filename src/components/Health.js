@@ -2,8 +2,8 @@ import React from 'react';
 
 const Health = () => {
   return (
-    <div>
-      <h1> Health Page </h1>
+    <div className="column">
+      <h1 className="title"> Health Page </h1>
     </div>
   );
 };

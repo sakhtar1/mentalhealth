@@ -3,8 +3,8 @@ import React from 'react';
 
 const Articles = () => {
   return (
-    <div>
-      <h1> Article Page </h1>   
+    <div className="column">
+      <h1 className="title"> Article Page </h1>   
     </div>
   );
 };

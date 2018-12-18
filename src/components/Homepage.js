@@ -14,16 +14,16 @@ const Homepage = () => {
             <h1 className="title"> Mental Health </h1>
           </div>
           <div className="column">
-            <p> Mental disordered are believed by most people as rare and something that can nver happen to them
+            <p className="column"> Mental disordered are believed by most people as rare and something that can never happen to them
             or their family members. However, mental disorders are very common with an estimated 54 million Americans 
             suffering from a form of mental disorder in a given year. </p>
-            <p> It is hard on a most families to prepare and cope with this.
+            <p className="column"> It is hard on a most families to prepare and cope with this.
             It can be physically and emotionally trying, and can make us feel vulnerable to the opinions and 
             judgments of others.</p>
 
-            <p>If you think you or someone you know may have a mental or emotional problem, it is important to remember there is hope and help</p>
-            <p> To get more information about your or someone you love's mental health... </p>
-		       <p> Enter the zipcode for a mental health clinic near you: </p>
+            <p className="column">If you think you or someone you know may have a mental or emotional problem, it is important to remember there is hope and help.</p>
+            <p className="column"> To get more information about your or someone you love's mental health... </p>
+		       <p className="column"> Enter the zipcode for a mental health clinic near you: </p>
           </div>
           <div>
           <HomeComponent />
