@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteArticle } from '../../actions/index';
+import { deleteArticle } from '../actions/index';
 
 class ArticlesPage extends Component {
 
@@ -12,6 +12,7 @@ class ArticlesPage extends Component {
         return(
             <div>
                 <h1> {this.props.article[0].title}</h1>
+                <h2> {this.props.article[0].content}</h2>
                 <h2> {this.props.article[0].author}</h2>
                 <button onClick={this.handleClick}>Delete</button>
             </div>
@@ -20,7 +21,7 @@ class ArticlesPage extends Component {
 };
 const mapStateToProps = state => {
     return{
-       article: state.getArticles[0]
+       article: state.viewArticle[0]
     }
 }
-export default connect(mapStateToProps, { deleteArticle })(article);
+export default connect(mapStateToProps, { deleteArticle })(ArticlesPage);

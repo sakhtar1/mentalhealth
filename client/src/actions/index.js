@@ -9,7 +9,7 @@ export const login = user => {
   }
 };
 
- export const viewArticle = (payload) => {
+ export const articleView = (payload) => {
     return {
       type: 'VIEW_ARTICLE',
       payload

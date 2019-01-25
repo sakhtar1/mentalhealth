@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../../actions/index';
+import { login } from '../actions/index';
 
 class Login extends Component {
     state = {
@@ -23,9 +23,9 @@ class Login extends Component {
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="email">Email</label>
+                    <label>Email</label>
                     <input type="email" ref="email" value={this.state.email} onChange={this.handleChange} />
-                    <label htmlFor="password">Password</label>
+                    <label>Password</label>
                     <input type="password" ref="password" value={this.state.password} onChange={this.handleChange} />
                     <input type="submit">Login</input>
                 </form>

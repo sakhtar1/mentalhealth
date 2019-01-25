@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Router from './Router';
-import Articles from './components/Articles'
+
 
 const Navigation = (props) => 
 <nav> 
@@ -9,6 +9,8 @@ const Navigation = (props) =>
     <li><NavLink to='/'>Mental Health</NavLink></li>
     <li><NavLink to='/health'>Health</NavLink></li>
     <li><NavLink to='/articles'>Articles</NavLink></li>
+    <li><NavLink to={{pathname: '/new-article'}}>Add Article</NavLink></li>
+    <li><NavLink to='/login'>Login</NavLink></li>
     
   </ul>
 </nav>

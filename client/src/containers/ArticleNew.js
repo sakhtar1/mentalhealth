@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addBook } from '../../actions/index';
+import { addArticle } from '../actions/index';
 import uuid from 'uuid';
+import { Field, reduxForm } from 'redux-form';
 
 class ArticleNew extends Component {
     state = {
         title: '',
         content: '',
-        user_name:'',
+        author: '',
     }
 
     handleSubmit = event => {
@@ -29,18 +30,32 @@ class ArticleNew extends Component {
    
     render() {
         return(
-            <div className="ArticleNew">
-                <h1>Add a Book</h1>
+            <div>
+                <h1>Add an Article</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Title</label>
-                    <input type="text" ref="title" value={this.state.title} onChange={(event) => this.setState({title: event.target.value})}/>
-                    <label>Author</label>
-                    <input type="text" ref="content" value={this.state.content} onChange={(event) => this.setState({content: event.target.value})}/>
-                    <label>Image URL</label>
-                    <input type="text" ref="user_name" value={this.state.user_name} onChange={(event) => this.setState({user_name: event.target.value})}/>
-                    <label>Description</label> 
+                    <div>
+                        <label>Title: </label>
+                        <br></br>
+                        <input type="text" ref="title" value={this.state.title} onChange={(event) => this.setState({title: event.target.value})}/>
+                        <br></br>
+                        <label>Content: </label>
+                        <br></br>
+                        <textarea ref="content" value={this.state.content} onChange={(event) => this.setState({content: event.target.value})}/>
+                        <br></br>
+                        <label>Author Name: </label>
+                        <br></br>
+                        <input type="text" ref="author" value={this.state.author} onChange={(event) => this.setState({author: event.target.value})}/>
+                        <br></br>
+                    </div>
+                    <br></br>
+                    <button type="submit">Create</button>
                 </form>
             </div>
         );
     }
 };
+
+
+
+export default withRouter(connect(null, { addArticle })(ArticleNew));
+
