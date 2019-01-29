@@ -1,3 +1,4 @@
+
 body {
  font-weight: 400;
     letter-spacing: normal;
@@ -12,21 +13,14 @@ body {
 }
 
 .page-container {
-	width: 600px;
+	width: 70%;
 	margin: 10px auto;
 	padding: 40px;
 	background-color: white;
 }
 
-   .header { 
-    box-sizing: border-box;
-    position: absolute;
-    top: 20px;
-    left: 0;
-    z-index: 400;
-    width: 100%;
-    padding: 20px;
-
+#login {
+    width: 50%;
 }
 
 h1 {
@@ -34,3 +28,7 @@ h1 {
 	text-decoration-line: black;
 	display: block;
 }
+
+
+
+
