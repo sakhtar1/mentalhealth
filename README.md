@@ -16,4 +16,5 @@ Run db:migrate and rails s in the api folder in the terminal, and npm install an
 Bug reports and pull requests are welcome at https://github.com/sakhtar1/mentalhealth.
 
 *License*
+
 This project has been licensed under the MIT open source license.
