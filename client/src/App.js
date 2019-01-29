@@ -5,10 +5,11 @@ import Footer from './components/Footer'
 import './App.css';
 
 
+
 const Navigation = (props) => {
   return(
     <div class="header">
-      <nav> 
+      <nav className="sticky"> 
         <ul>
           <li><NavLink to='/'>Mental Health</NavLink></li>
           <li><NavLink to='/health'>Health</NavLink></li>

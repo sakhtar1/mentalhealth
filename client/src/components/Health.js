@@ -2,12 +2,14 @@ import React from 'react';
 
 const Health = () => {
   return (
-    <div className="column">
-      <h1 className="title"> Your Health Is Important </h1>
-      <h6> ****New article every day**** </h6>
-		<br></br>
-      <h2 className="title">6 Ways Social Media Affects Our Mental Health </h2>
-
+    <div className="health">
+  		<div className="column">
+	      <h1 className="title"> Your Health Is Important </h1>
+	      <h6> ****New article every day**** </h6>
+	     </div>
+			<br></br>
+	      <h2 className="title">6 Ways Social Media Affects Our Mental Health </h2>
+	     
 
       <h5> By Alice G. Walton</h5>
       <p className="column">
@@ -19,7 +21,8 @@ const Health = () => {
 		But the same risks may be true for adults, across generations. 
 		Here's a quick run-down of the studies that have shown that social media isn't very good for mental well-being, and in some ways, it can be pretty damaging.
       </p>
-      <h3> It’s addictive	</h3>
+
+      <h3><strong> It’s addictive</strong></h3>
 
 <p className="column"> 
 	Experts have not been in total agreement on whether internet addiction is a real thing, let alone social media addiction, but there’s some good evidence that both may exist. 
@@ -34,8 +37,9 @@ const Health = () => {
 	withdrawal when they stopped using (this went for all internet use, not just social media). Their recent follow-up study found that when people stop using, they also undergo small but
 	 measurable physiological effects. Study author Phil Reed said, “We have known for some time that people who are over-dependent on digital devices report feelings of anxiety when they 
 	 are stopped from using them, but now we can see that these psychological effects are accompanied by actual physiological changes.” Whether this is true of social media per se is unclear right now, 
-	 but anecdotal evidence suggests it may be.
-	It triggers more sadness, less well-being </p>
+	 but anecdotal evidence suggests it may be.</p>
+
+	<h3><strong>It triggers more sadness, less well-being</strong></h3> 
 
 <p className="column">
 	The more we use social media, the less happy we seem to be. 
@@ -53,8 +57,8 @@ const Health = () => {
 	The team looked at how much people used 11 social media sites, including Facebook, Twitter, Google+, YouTube, LinkedIn, 
 	Instagram, Pinterest, Tumblr, Vine, Snapchat and Reddit, and correlated this with their “perceived social isolation.” 
 	Not surprisingly, it turned out that the more time people spent on these sites, the more socially isolated they perceived 
-	themselves to be. And perceived social isolation is one of the worst things for us, mentally and physically.
-	Comparing our lives with others is mentally unhealthy </p>
+	themselves to be. And perceived social isolation is one of the worst things for us, mentally and physically.</p>
+	<h3><strong>Comparing our lives with others is mentally unhealthy </strong></h3>
 
 <p className="column">
 	Part of the reason Facebook makes people feel socially isolated (even though they may not actually be) is the 
@@ -66,9 +70,9 @@ const Health = () => {
 	is linked to depressive symptoms.</p>
 
 
-<p className="column">
-	It can lead to jealousy—and a vicious cycle
 
+	<h3><strong>It can lead to jealousy—and a vicious cycle</strong></h3>
+<p className="column">
 	It’s no secret that the comparison factor in social media leads to jealousy—most people will admit that 
 	seeing other people’s tropical vacations and perfectly behaved kids is envy-inducing. Studies have certainly 
 	shown that social media use triggers feelings of jealousy. The authors of one study, looking at jealousy and other 
@@ -82,8 +86,9 @@ const Health = () => {
 	discovered that envy mediates the Facebook-depression link. That is, when envy is controlled for, Facebook isn’t so depressing. 
 	So it may be the envy that’s largely to blame in the depression-Facebook connection.</p>
 
-	<p className="column">
-We get caught in the delusion of thinking it will help
+	
+<h3><strong>We get caught in the delusion of thinking it will help</strong></h3>
+<p className="column">
 	Part of the unhealthy cycle is that we keep coming back to social media,
 	 even though it doesn’t make us feel very good. This is probably because of what’s known as a 
 	 forecasting error: Like a drug, we think getting a fix will help, but it actually makes us feel worse, which comes down 
@@ -93,8 +98,9 @@ We get caught in the delusion of thinking it will help
 	 believed that they’d feel better after using, not worse. Which of course turns out not to be the case at all, and sounds 
 	 a lot like the pattern in other types of addiction.</p>
 
-<p className="column">
-	More friends on social doesn’t mean you’re more social
+
+	<h3><strong>More friends on social doesn’t mean you’re more social</strong></h3>
+	<p className="column">
 	A couple of years ago, a study found that more friends on social media doesn’t 
 	necessarily mean you have a better social life—there seems to be a cap on the number of 
 	friends a person’s brain can handle, and it takes actual social interaction (not virtual) to keep up these friendships. 
@@ -111,7 +117,9 @@ We get caught in the delusion of thinking it will help
 	If you are feeling brave, try taking a little break, and see how it goes. And if you are going to keep using, 
 	then at least try to use in moderation. </p>
 
-
+	<div className="column">
+		<h1><a href="https://www.forbes.com/sites/alicegwalton/2017/06/30/a-run-down-of-social-medias-effects-on-our-mental-health/#246bc3002e5a" target="_blank"> Original Post</a></h1>
+	</div>
 
     </div>
   );

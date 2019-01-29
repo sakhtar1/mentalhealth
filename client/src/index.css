@@ -20,7 +20,16 @@ body {
 }
 
 #login {
+    padding-top: 40px;
     width: 50%;
+}
+
+.health {
+    padding-top: 40px;
+}
+
+.article-new {
+    padding-top: 40px;
 }
 
 h1 {

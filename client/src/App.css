@@ -37,3 +37,9 @@ li a:hover {
   background-color: #4CAF50;
   float: right;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
