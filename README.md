@@ -1,20 +1,24 @@
-*About*
+# README
 
-Mental Health is a project that focuses on user's mental health, resources they can connect to, and where they can go to help.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Users can also create an account and write their own articles and experiences. 
+Things you may want to cover:
 
-Mental Health is a project that I built with React and Redux in the Front-end with a Rails API. This repository is the front-end of my application. The application was created using Create-React-App, and uses ES6 standards.
+* Ruby version
 
-*Install Directions*
+* System dependencies
 
-To see the application in browser, clone both back-end and front-end repositories. The back-end repository can be found here: . 
-Run db:migrate and rails s in the api folder in the terminal, and npm install and npm start in the client folder in the terminal. 
+* Configuration
 
-*Contributions*
+* Database creation
 
-Bug reports and pull requests are welcome at https://github.com/sakhtar1/mentalhealth.
+* Database initialization
 
-*License*
+* How to run the test suite
 
-This project has been licensed under the MIT open source license.
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
