@@ -11,6 +11,8 @@ const allArticles = (state = initial_State, action) => {
 			return{ ...state, articles: action.payload } 
 		case 'ADD_ARTICLE':
         	return { ...state, articles: state.articles.concat(action.payload)}
+      	case 'SUBSTITUTE_ARTICLE': 
+	      return {...state, articles: state.articles.filter(article => article.id !== action.payload.id)}
        case 'DELETE_ARTICLE':
         return {...state, articles: state.articles.filter(article => article.id !== action.payload.id)}
 		default:

@@ -1,4 +1,4 @@
-const API_URL = process.env.APP_API_URL;
+// const API_URL = process.env.APP_API_URL;
 
 
 export const login = user => {
@@ -16,67 +16,90 @@ export const login = user => {
     }
   }
 
-  export const fetchArticle = () => {
-    let data = {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-     
-      }
-    }
+// export const addArticle = article => {
+//   return { type: 'ADD_ARTICLE', article };
+// };
 
-    return dispatch => {
-      fetch(`${ API_URL }/articles`, data)
-        .then(response => response.json())
-        .then(articles => {
-          dispatch({
+// export const setArticles = articles => {
+//   return { type: 'SET_ARTICLES, articles };
+// };
+
+// export const removeArticle = articleId => {
+//   return { type: 'REMOVE_ARTICLE', articleId };
+// };
+
+export const substituteArticle = article => {
+  return { type: 'SUBSTITUTE_ARTICLE', article };
+};
+
+
+ const API_URL = 'http://localhost:3001';
+export const fetchArticle = () => {
+  return dispatch => {
+    return fetch(`${API_URL}/articles`)
+    .then(res => res.json())
+    .then(articles => {
+      dispatch({
               type: 'FETCH_ARTICLE',
               payload: articles
-          })
-        })
-        .catch(err => err)
-    }
-  }
-  
-  export const addArticle = article => {
-    let data = {
+          });
+    }).catch(err => console.log(err))
+  };
+};
+
+export const addArticle= (article, routerHistory) => {
+  return dispatch => {
+    return fetch(`${API_URL}/articles`, {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(article)
-    }
-  
-    return dispatch => {
-      fetch(`${ API_URL }/articles`, data)
-        .then(response => response.json())
-        .then(article => dispatch({
+      body: JSON.stringify({ article })
+    })
+    .then(res => res.json())
+    .then(article => {
+      if (article.id) {
+          dispatch({
           type: 'ADD_ARTICLE',
           payload: article
-        }))
-        .catch(err => err)
-    }
-  }
-
- export const deleteArticle = id => {
-    let data = {
-      method: 'DELETE',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        });
+      } else {
+        const err = article.errors.join('\n\n')
+        alert(`${article.message}\n\n${err}`)
       }
-    }
+    }).catch(err => console.log(err));
+  };
+};
 
+export const deleteArticle = (articleId, routerHistory) => {
   return dispatch => {
-      fetch(`${ API_URL }/articles/${ id }`, data)
-        .then(response => response.json())
-        .then(article => dispatch({
+    return fetch(`${API_URL}/articles/${articleId}`, {
+      method: 'DELETE'
+    })
+    .then(res => {
+      if (res.status === 204) {
+        routerHistory.replace('/articles')
+        dispatch({
           type: 'DELETE_ARTICLE',
-          payload: article
-        }))
-        .catch(err => err)
-    }
-  }
+          payload: articleId
+        });
+      }
+    }).catch(err =>  console.log(err));
+  };
+};
 
+export const updateArticle = (article) => {
+  return dispatch => {
+    return fetch(`${API_URL}/articles/${article.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ article })
+    })
+    .then(res => res.json())
+    .then(article => {
+      dispatch(substituteArticle(article));
+    }).catch(err => console.log(err));
+  };
+};

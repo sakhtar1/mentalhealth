@@ -13,7 +13,7 @@ class Articles extends Component {
 
 	articleSelectedHandler = (id) => {
 		let filter = this.props.articles.filter(article => article.id === id)
-		this.props.viewArticle(filter);
+		this.props.articleView(filter);
 		this.props.history.push({pathname:'/articles/' + id});
 	}
 
@@ -21,7 +21,7 @@ class Articles extends Component {
 		const renderArticles = () => this.props.articles.map(article => {
 			return(
 			<Link to={"/articles/" + article.id} key={article.id} >
-					<Articles
+					<Article
 					title={article.title} 
 					content={article.content}
 					author={article.author}
@@ -29,7 +29,7 @@ class Articles extends Component {
 			</Link>
 			);
 		});
-	
+		
 		return(
 			<div>
 				<section>

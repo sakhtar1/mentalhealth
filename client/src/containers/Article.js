@@ -6,7 +6,7 @@ const article = (props) => (
 		All Articles
 	    <div className="Article" onClick={props.clicked}>
 	        <h3>{props.title}</h3>
-	        <div className="Info">
+	        <div>
 	            <div className="Content">{props.content}</div>
 	            <div>{props.author}</div>
 	        </div>

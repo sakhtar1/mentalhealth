@@ -12,6 +12,7 @@ const Homepage = () => {
 		    <div className="column">
           <div className="column">
             <h1 className="title"> Mental Health </h1>
+            
           </div>
           <div className="column">
             <p className="column"> Mental disordered are believed by most people as rare and something that can never happen to them

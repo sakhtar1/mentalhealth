@@ -21,7 +21,7 @@ class ArticlesPage extends Component {
 };
 const mapStateToProps = state => {
     return{
-       article: state.viewArticle[0]
+       article: state.articleView[0]
     }
 }
 export default connect(mapStateToProps, { deleteArticle })(ArticlesPage);
