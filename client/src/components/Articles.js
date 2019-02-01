@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { fetchArticle, articleView } from '../actions/index';
+import Article from '../containers/Article'
 
 
 class Articles extends Component {
@@ -12,13 +13,18 @@ class Articles extends Component {
 	}
 
 	articleSelectedHandler = (id) => {
-		let filter = this.props.articles.filter(article => article.id === id)
+		const { articles } = this.props;
+		let filter = articles.filter(article => article.id === id)
 		this.props.articleView(filter);
 		this.props.history.push({pathname:'/articles/' + id});
 	}
 
 	render(){
-		const renderArticles = () => this.props.articles.map(article => {
+		
+		let { articles } = this.props
+		let renderArticles;
+		if (this.props && this.props.articles.length !== 0){
+		renderArticles = articles.map(article => {
 			return(
 			<Link to={"/articles/" + article.id} key={article.id} >
 					<Article
@@ -28,13 +34,11 @@ class Articles extends Component {
 					clicked={() => this.articleSelectedHandler(article.id)} />
 			</Link>
 			);
-		});
+		})};
 		
 		return(
 			<div>
-				<section>
-					{renderArticles()}				
-				</section> 
+					{renderArticles}				
 			</div>
 		);
 	}

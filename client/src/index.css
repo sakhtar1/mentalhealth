@@ -1,5 +1,6 @@
 
 body {
+     padding-top: 40px;
  font-weight: 400;
     letter-spacing: normal;
     text-transform: none;
@@ -36,6 +37,9 @@ h1 {
 	color: gray;
 	text-decoration-line: black;
 	display: block;
+}
+.Articledis {
+    padding-top: 40px;
 }
 
 

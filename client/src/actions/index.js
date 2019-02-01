@@ -1,5 +1,3 @@
-// const API_URL = process.env.APP_API_URL;
-
 
 export const login = user => {
   return {
@@ -33,7 +31,7 @@ export const substituteArticle = article => {
 };
 
 
- const API_URL = 'http://localhost:3001';
+ const API_URL = 'http://localhost:3001/api';
 export const fetchArticle = () => {
   return dispatch => {
     return fetch(`${API_URL}/articles`)

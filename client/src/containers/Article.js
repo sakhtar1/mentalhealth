@@ -2,13 +2,18 @@ import React from 'react';
 
 
 const article = (props) => (
-	<div>
-		All Articles
-	    <div className="Article" onClick={props.clicked}>
-	        <h3>{props.title}</h3>
+	<div className="Articledis">
+	    <div className="Article">
+	       <div> 
+	       		<h1 className="title" onClick={props.clicked}>{props.title}</h1>
+	       </div>
+	       <br></br>
 	        <div>
-	            <div className="Content">{props.content}</div>
-	            <div>{props.author}</div>
+	            <div>
+	            	<h3 className="column">{props.content}</h3>
+	            </div>
+	            <br></br>
+	          <div>Written and Published by: {props.author}</div>
 	        </div>
 	    </div>
 	  </div>
