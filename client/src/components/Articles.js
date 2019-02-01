@@ -26,13 +26,13 @@ class Articles extends Component {
 		if (this.props && this.props.articles.length !== 0){
 		renderArticles = articles.map(article => {
 			return(
-			<Link to={"/articles/" + article.id} key={article.id} >
+				<Link to={"/articles/" + article.id} key={article.id} >
 					<Article
 					title={article.title} 
 					content={article.content}
 					author={article.author}
 					clicked={() => this.articleSelectedHandler(article.id)} />
-			</Link>
+				</Link>
 			);
 		})};
 		

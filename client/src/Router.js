@@ -5,6 +5,7 @@ import Articles from './components/Articles'
 import Homepage from './components/Homepage'
 import ArticleNew from './containers/ArticleNew';
 import Login from './components/userLogin';
+import ArticlesPage from './containers/ArticlesPage';
 
 
 
@@ -15,6 +16,7 @@ const Router = () => (
 		<Route exact path='/articles' component={Articles} />
 		<Route exact path='/new-article' component={ArticleNew} />
 		<Route exact path='/login' component={Login} />
+		<Route exact path='/articles/:id' component={ArticlesPage} />
 		
 	</Switch>
 	)

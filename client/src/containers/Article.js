@@ -13,7 +13,7 @@ const article = (props) => (
 	            	<h3 className="column">{props.content}</h3>
 	            </div>
 	            <br></br>
-	          <div>Written and Published by: {props.author}</div>
+	          <div>Author: {props.author}</div>
 	        </div>
 	    </div>
 	  </div>
