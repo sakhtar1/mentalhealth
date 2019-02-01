@@ -1,5 +1,5 @@
 class ArticleSerializer < ActiveModel::Serializer
-  attributes :title, :content, :author
+  attributes :id, :title, :content, :author
   # belongs_to :user
   # has_many :comments
 end

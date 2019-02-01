@@ -2703,3 +2703,108 @@ Processing by Api::ArticlesController#index as */*
 Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/api/articles" for ::1 at 2019-02-01 16:32:45 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (5.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.43ms)
+Completed 200 OK in 14ms (Views: 6.9ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-01 16:32:49 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.48ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/articles.json" for ::1 at 2019-02-01 16:36:47 -0500
+Processing by Api::ArticlesController#index as JSON
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.02ms)
+Completed 200 OK in 20ms (Views: 15.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-01 16:36:59 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.56ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-01 16:37:01 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.71ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-01 16:37:05 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.93ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-01 16:37:08 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.33ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-01 16:37:11 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.52ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-01 16:41:28 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.65ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-01 16:41:28 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"Test run", "content"=>"Lorem Ipsum", "author"=>"sample test"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (1.8ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Test run"], ["content", "Lorem Ipsum"], ["created_at", "2019-02-01 21:41:28.849092"], ["updated_at", "2019-02-01 21:41:28.849092"], ["author", "sample test"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+Completed 200 OK in 17ms (Views: 2.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-01 16:41:38 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.22ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-01 16:42:05 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.55ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
