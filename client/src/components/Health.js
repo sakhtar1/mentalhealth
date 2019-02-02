@@ -5,7 +5,7 @@ const Health = () => {
     <div className="health">
   		<div className="column">
 	      <h1 className="title"> Your Health Is Important </h1>
-	      <h6> ****New article every day**** </h6>
+	      <h6><em> ****New article every day**** </em></h6>
 	     </div>
 			<br></br>
 	      <h2 className="title">6 Ways Social Media Affects Our Mental Health </h2>
