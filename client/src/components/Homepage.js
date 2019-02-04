@@ -9,6 +9,14 @@ import Bulma from 'bulma'
 const Homepage = () => {
 
 		  return (
+        <div>
+          <div>
+            <img 
+              class="image"
+              src="https://hbr.org/resources/images/article_assets/2018/10/Oct22_18_862457080.png"
+              alt="new"
+              />
+          </div>
 		    <div className="column">
           <div className="column">
             <h1 className="title"> Mental Health </h1>
@@ -39,6 +47,7 @@ const Homepage = () => {
             
 		       </div>
 		    </div>
+        </div>
 		  );
 		};
 

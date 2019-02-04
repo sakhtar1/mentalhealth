@@ -9,7 +9,7 @@ const article = (props) => (
 	       		<h1 className="title" onClick={props.clicked}>{props.title}</h1>
 	       </div>
 	       <br></br>
-	          <div>Author: {props.author}</div>
+	          <div onClick={props.clicked}>Author: {props.author}</div>
 	        </div>
 	  </div>
 

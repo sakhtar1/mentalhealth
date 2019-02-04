@@ -3,6 +3,13 @@ import React from 'react';
 const Health = () => {
   return (
     <div className="health">
+     	<div>
+            <img 
+              class="image"
+              src="https://www.york.ac.uk/media/research/images/themepages/mental-health-800x400.png"
+              alt="new"
+              />
+          </div>
   		<div className="column">
 	      <h1 className="title"> Your Health Is Important </h1>
 	      <h6><em> ****New article every day**** </em></h6>

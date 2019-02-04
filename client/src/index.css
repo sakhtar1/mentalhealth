@@ -1,7 +1,7 @@
 
 body {
      padding-top: 40px;
- font-weight: 400;
+    font-weight: 400;
     letter-spacing: normal;
     text-transform: none;
     line-height: 1.7em;
@@ -45,7 +45,14 @@ h1 {
 .articleshow{
     padding-top: 40px;
 }
+.image {
+    width: 100%;
+    padding-top: 20px;
+}
 
+.footerP {
+    text-align: center
+}
 
 
 
