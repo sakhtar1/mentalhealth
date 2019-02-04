@@ -15,17 +15,7 @@ export const login = user => {
     }
   }
 
-// export const addArticle = article => {
-//   return { type: 'ADD_ARTICLE', article };
-// };
 
-// export const setArticles = articles => {
-//   return { type: 'SET_ARTICLES, articles };
-// };
-
-// export const removeArticle = articleId => {
-//   return { type: 'REMOVE_ARTICLE', articleId };
-// };
 
 export const substituteArticle = article => {
   return { type: 'SUBSTITUTE_ARTICLE', article };
