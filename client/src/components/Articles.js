@@ -2,14 +2,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
-import { fetchArticle, articleView } from '../actions/index';
+import { fetchArticles, articleView } from '../actions/index';
 import Article from '../containers/Article'
 
 
 class Articles extends Component {
 
 	componentDidMount() {
-		this.props.fetchArticle()
+		this.props.fetchArticles()
 	}
 
 	articleSelectedHandler = (id) => {
@@ -29,10 +29,12 @@ class Articles extends Component {
 				<Link to={"/articles/" + article.id} key={article.id} >
 					<Article
 					title={article.title} 
-					content={article.content}
 					author={article.author}
 					clicked={() => this.articleSelectedHandler(article.id)} />
 				</Link>
+				
+					
+				
 			);
 		})};
 		
@@ -49,4 +51,4 @@ const mapStateToProps = state => {
 	}
   }
 
-export default connect(mapStateToProps, { fetchArticle, articleView })(Articles);
+export default connect(mapStateToProps, { fetchArticles, articleView })(Articles);

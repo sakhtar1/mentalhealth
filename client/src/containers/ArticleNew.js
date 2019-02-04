@@ -10,6 +10,7 @@ class ArticleNew extends Component {
         title: '',
         content: '',
         author: '',
+        created_at:'',
     }
 
     handleSubmit = event => {
@@ -42,7 +43,7 @@ class ArticleNew extends Component {
                     <div class="field">
                       <label class="label">Content</label>
                       <div class="control">
-                        <textarea class="textarea" placeholder="Article Content" ref="content" value={this.state.content} onChange={(event) => this.setState({content: event.target.value})}/>
+                        <textarea class="textarea" rows="10" placeholder="Article Content" ref="content" value={this.state.content} onChange={(event) => this.setState({content: event.target.value})}/>
                       </div>
                     </div>
                         <div class="field">

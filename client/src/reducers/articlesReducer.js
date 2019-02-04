@@ -7,7 +7,7 @@ const initial_State= {
 const allArticles = (state = initial_State, action) => {
 
 	switch(action.type){
-		case 'FETCH_ARTICLE':
+		case 'FETCH_ARTICLES':
 			return{ ...state, articles: action.payload } 
 		case 'ADD_ARTICLE':
         	return { ...state, articles: state.articles.concat(action.payload)}

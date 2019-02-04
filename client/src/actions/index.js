@@ -1,3 +1,4 @@
+ const API_URL = 'http://localhost:3001/api';
 
 export const login = user => {
   return {
@@ -31,19 +32,20 @@ export const substituteArticle = article => {
 };
 
 
- const API_URL = 'http://localhost:3001/api';
-export const fetchArticle = () => {
+
+export const fetchArticles = () => {
   return dispatch => {
     return fetch(`${API_URL}/articles`)
     .then(res => res.json())
     .then(articles => {
       dispatch({
-              type: 'FETCH_ARTICLE',
+              type: 'FETCH_ARTICLES',
               payload: articles
           });
     }).catch(err => console.log(err))
   };
 };
+
 
 export const addArticle= (article, routerHistory) => {
   return dispatch => {
@@ -101,3 +103,5 @@ export const updateArticle = (article) => {
     }).catch(err => console.log(err));
   };
 };
+
+
