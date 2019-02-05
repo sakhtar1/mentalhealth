@@ -12,6 +12,7 @@ const Homepage = () => {
 		  return (
         <div>
           <div>
+
             <img 
               class="image"
               src="https://hbr.org/resources/images/article_assets/2018/10/Oct22_18_862457080.png"
