@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addArticle } from '../actions/index';
-import uuid from 'uuid';
+
 
 
 class ArticleNew extends Component {
@@ -16,11 +16,8 @@ class ArticleNew extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        this.setState({
-            id: uuid()
-        })
         this.props.addArticle(this.state);
-        alert("Your article has been added!")
+        alert("Your article has been created!")
         this.props.history.push('/articles') 
         }
 
@@ -37,34 +34,34 @@ class ArticleNew extends Component {
                 <h1 className="title">Add an Article</h1>
                
                 <form onSubmit={this.handleSubmit}>
-                    <div class="field">
-                      <label class="label">Title</label>
-                      <div class="control">
-                        <input class="input" type="text" placeholder="Title" ref="title" value={this.state.title} onChange={(event) => this.setState({title: event.target.value})}/>
+                    <div className="field">
+                      <label className="label">Title</label>
+                      <div className="control">
+                        <input className="input" type="text" placeholder="Title" ref="title" value={this.state.title} onChange={(event) => this.setState({title: event.target.value})}/>
                       </div>
                     </div>
-                    <div class="field">
-                      <label class="label">Content</label>
-                      <div class="control">
-                        <textarea class="textarea" rows="10" placeholder="Article Content" ref="content" value={this.state.content} onChange={(event) => this.setState({content: event.target.value})}/>
+                    <div className="field">
+                      <label className="label">Content</label>
+                      <div className="control">
+                        <textarea className="textarea" rows="10" placeholder="Article Content" ref="content" value={this.state.content} onChange={(event) => this.setState({content: event.target.value})}/>
                       </div>
                     </div>
-                        <div class="field">
-                          <label class="label">Author</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="Author Name" ref="author" value={this.state.author} onChange={(event) => this.setState({author: event.target.value})}/>
+                        <div className="field">
+                          <label className="label">Author</label>
+                          <div className="control">
+                            <input className="input" type="text" placeholder="Author Name" ref="author" value={this.state.author} onChange={(event) => this.setState({author: event.target.value})}/>
                           </div>
                         </div>
-                      <div class="field">
-                          <label class="label">Image Link</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="Paste URL" ref="image" value={this.state.image} onChange={(event) => this.setState({image: event.target.value})}/>
+                      <div className="field">
+                          <label className="label">Image Link</label>
+                          <div className="control">
+                            <input className="input" type="text" placeholder="Paste URL" ref="image" value={this.state.image} onChange={(event) => this.setState({image: event.target.value})}/>
                           </div>
                         </div>
                    
-                    <div class="field is-grouped">
-                          <div class="control">
-                            <button class="button is-link">Create</button>
+                    <div className="field is-grouped">
+                          <div className="control">
+                            <button className="button is-link">Create</button>
                           </div>
                     </div>
                       <div><button className='cancelLink'

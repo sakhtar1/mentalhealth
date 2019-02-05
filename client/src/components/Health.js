@@ -5,7 +5,7 @@ const Health = () => {
     <div className="health">
      	<div>
             <img 
-              class="image"
+              className="image"
               src="https://www.york.ac.uk/media/research/images/themepages/mental-health-800x400.png"
               alt="new"
               />
@@ -125,7 +125,7 @@ const Health = () => {
 	then at least try to use in moderation. </p>
 
 	<div className="column">
-		<p><a href="https://www.forbes.com/sites/alicegwalton/2017/06/30/a-run-down-of-social-medias-effects-on-our-mental-health/#246bc3002e5a" target="_blank"> Original Post</a></p>
+		<p><a href="https://www.forbes.com/sites/alicegwalton/2017/06/30/a-run-down-of-social-medias-effects-on-our-mental-health/#246bc3002e5a" target="_blank" rel="noopener noreferrer"> Original Post</a></p>
 	</div>
 
     </div>

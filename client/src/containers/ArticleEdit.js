@@ -34,28 +34,28 @@ class ArticleEdit extends Component {
             <div className="article-edit">
                 <h1 className="title">Update Article</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <div class="field">
-                      <label class="label">Title</label>
-                      <div class="control">
-                        <input class="input" type="text" placeholder="Title" ref="title" value={this.state.title} onChange={(event) => this.setState({title: event.target.value})}/>
+                    <div className="field">
+                      <label className="label">Title</label>
+                      <div className="control">
+                        <input className="input" type="text" placeholder="Title" ref="title" value={this.state.title} onChange={(event) => this.setState({title: event.target.value})}/>
                       </div>
                     </div>
-                    <div class="field">
-                      <label class="label">Content</label>
-                      <div class="control">
-                        <textarea class="textarea" rows="10" placeholder="Article Content" ref="content" value={this.state.content} onChange={(event) => this.setState({content: event.target.value})}/>
+                    <div className="field">
+                      <label className="label">Content</label>
+                      <div className="control">
+                        <textarea className="textarea" rows="10" placeholder="Article Content" ref="content" value={this.state.content} onChange={(event) => this.setState({content: event.target.value})}/>
                       </div>
                     </div>
-                        <div class="field">
-                          <label class="label">Author</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="Author Name" ref="author" value={this.state.author} onChange={(event) => this.setState({author: event.target.value})}/>
+                        <div className="field">
+                          <label className="label">Author</label>
+                          <div className="control">
+                            <input className="input" type="text" placeholder="Author Name" ref="author" value={this.state.author} onChange={(event) => this.setState({author: event.target.value})}/>
                           </div>
                         </div>
                    
-                    <div class="field is-grouped">
-                          <div class="control">
-                            <button class="button is-link">Update</button>
+                    <div className="field is-grouped">
+                          <div className="control">
+                            <button className="button is-link">Update</button>
                           </div>
                     </div>
                     <a className='cancelLink'

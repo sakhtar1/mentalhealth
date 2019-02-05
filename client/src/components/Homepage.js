@@ -14,7 +14,7 @@ const Homepage = () => {
           <div>
 
             <img 
-              class="image"
+              className="image"
               src="https://hbr.org/resources/images/article_assets/2018/10/Oct22_18_862457080.png"
               alt="new"
               />
@@ -33,7 +33,7 @@ const Homepage = () => {
             judgments of others.</p>
 
             <p className="column">If you think you or someone you know may have a mental or emotional problem, it is important to remember there is hope and help.</p>
-            <p className="column"><strong> To get more information about your or someone you love's mental health: You can reach <a href="https://nycwell.cityofnewyork.us/en/" target="_blank"> Mobile Crisis</a> at 1-888-NYC-WELL (1-888-692-9355). They have 24/7 support if you ever need to talk. </strong></p>
+            <p className="column"><strong> To get more information about your or someone you love's mental health: You can reach <a href="https://nycwell.cityofnewyork.us/en/" target="_blank" rel="noopener noreferrer"> Mobile Crisis</a> at 1-888-NYC-WELL (1-888-692-9355). They have 24/7 support if you ever need to talk. </strong></p>
 		       <p className="column"> Enter the zipcode for a mental health clinic near you: </p>
           </div>
           <div>

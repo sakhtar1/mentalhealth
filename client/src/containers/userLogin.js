@@ -25,28 +25,28 @@ class Login extends Component {
               <div id="login">
                 <h1 className="title"> Log In </h1>
                   <form onSubmit={this.handleSubmit}>
-                      <div class="field">
-                        <p class="control has-icons-left has-icons-right">
-                          <input class="input" type="email" placeholder="Email" ref= "email" value={this.state.email} onChange={this.handleChange} />
-                          <span class="icon is-small is-left">
-                            <i class="fas fa-envelope"></i>
+                      <div className="field">
+                        <p className="control has-icons-left has-icons-right">
+                          <input className="input" type="email" placeholder="Email" ref= "email" value={this.state.email} onChange={this.handleChange} />
+                          <span className="icon is-small is-left">
+                            <i className="fas fa-envelope"></i>
                           </span>
-                          <span class="icon is-small is-right">
-                            <i class="fas fa-check"></i>
-                          </span>
-                        </p>
-                      </div>
-                      <div class="field">
-                        <p class="control has-icons-left">
-                          <input class="input" type="password" placeholder="Password" ref="password" value={this.state.password} onChange={this.handleChange} />
-                          <span class="icon is-small is-left">
-                            <i class="fas fa-lock"></i>
+                          <span className="icon is-small is-right">
+                            <i className="fas fa-check"></i>
                           </span>
                         </p>
                       </div>
-                      <div class="field">
-                        <p class="control">
-                          <button class="button is-success">
+                      <div className="field">
+                        <p className="control has-icons-left">
+                          <input className="input" type="password" placeholder="Password" ref="password" value={this.state.password} onChange={this.handleChange} />
+                          <span className="icon is-small is-left">
+                            <i className="fas fa-lock"></i>
+                          </span>
+                        </p>
+                      </div>
+                      <div className="field">
+                        <p className="control">
+                          <button className="button is-success">
                             Login
                           </button>
                         </p>

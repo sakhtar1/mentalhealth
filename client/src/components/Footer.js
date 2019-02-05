@@ -3,13 +3,13 @@ import React from 'react';
 const Footer = (props) => {
   return(
   	<div>
-	    <footer class="footer">
-	      <div class="content has-text-centered">
+	    <footer className="footer">
+	      <div className="content has-text-centered">
 	        <p>
 	          <strong>Mental Health . All rights reserved. SA. © 2019</strong>
 	        </p>
 	      </div>
-	       <div class='has-text-centered'>
+	       <div className='has-text-centered'>
 		       <p>
 		          This information is not designed to replace a physician's 
 		          independent judgment about the appropriateness or risks of a procedure 

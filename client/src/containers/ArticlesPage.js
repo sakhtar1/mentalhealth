@@ -13,21 +13,21 @@ class ArticlesPage extends Component {
     }
 
     handleClickLike = () => {
-        let currentArticle = this.props.article[0].id
+        let currentArticle = this.props.article[0]
         currentArticle.likes += 1;
         this.props.likesArticle(currentArticle);
    };
 
     render(){
-    
-        let keyword = this.props.article[0].likes === 1 ? 'like' : 'likes';
+
+            let likekey = this.props.article[0].likes === 1 ? 'like' : 'likes';
                 
         return(
-            <div class="articleshow">
-                <h1 class="title"> {this.props.article[0].title}</h1>
+            <div className="articleshow">
+                <h1 className="title"> {this.props.article[0].title}</h1>
                  <div>
                   <img 
-                    class="image"
+                    className="image"
                     src={this.props.article[0].image}
                     alt={this.props.article[0].title}
                     />
@@ -35,7 +35,7 @@ class ArticlesPage extends Component {
 
                 <br></br>
                 <div>
-                    <p class = "content"> {this.props.article[0].content}</p>
+                    <p className = "content"> {this.props.article[0].content}</p>
                 </div>
                 <p> Author: {this.props.article[0].author}</p>
                 <br></br>
@@ -44,15 +44,15 @@ class ArticlesPage extends Component {
                 </div>
                 <br></br>
                 <div>
-                    <input type='button' value='Like me' onClick={this.handleClickLike} />
+                    <input type='button' className='btn-primary' value='Like Me!' onClick={this.handleClickLike} />
                       <div style={{display: 'inline', marginLeft: 10}}>
-                        { this.props.article[0].likes} {keyword}
+                        { this.props.article[0].likes} {likekey}
                         </div>
                 </div>
                 <br></br>
-                <div class="field">
-                        <p class="control">
-                          <button class="button is-success" onClick={this.handleClick}>
+                <div className="field">
+                        <p className="control">
+                          <button className="button is-success" onClick={this.handleClick}>
                             Delete
                           </button>
                         </p>
