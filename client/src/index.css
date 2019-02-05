@@ -25,6 +25,10 @@ body {
     width: 50%;
 }
 
+.loginnav {
+  float: right;
+}
+
 .health {
     padding-top: 40px;
 }
@@ -48,10 +52,6 @@ h1 {
 .image {
     width: 100%;
     padding-top: 20px;
-}
-
-.footerP {
-    text-align: center
 }
 
 

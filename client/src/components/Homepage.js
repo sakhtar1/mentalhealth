@@ -4,6 +4,7 @@ import { GoogleComponent } from 'react-google-location'
 import GoogleMapReact from 'google-map-react';
 import Zip from 'react-zipcode'
 import Bulma from 'bulma'
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 const Homepage = () => {
@@ -23,7 +24,7 @@ const Homepage = () => {
             
           </div>
           <div className="column">
-            <p className="column"> Mental disordered are believed by most people as rare and something that can never happen to them
+            <p className="column"> Mental disorderes are believed by most people as rare and something that can never happen to them
             or their family members. However, mental disorders are very common with an estimated 54 million Americans 
             suffering from a form of mental disorder in a given year. </p>
             <p className="column"> It is hard on a most families to prepare and cope with this.

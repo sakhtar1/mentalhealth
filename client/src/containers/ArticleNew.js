@@ -11,6 +11,7 @@ class ArticleNew extends Component {
         content: '',
         author: '',
         created_at:'',
+        image: '',
     }
 
     handleSubmit = event => {
@@ -21,7 +22,8 @@ class ArticleNew extends Component {
         this.props.addArticle(this.state);
         alert("Your article has been added!")
         this.props.history.push('/articles') 
-    }
+        }
+
 
     handleChange = event => {
         this.setState({
@@ -33,6 +35,7 @@ class ArticleNew extends Component {
         return(
             <div className="article-new">
                 <h1 className="title">Add an Article</h1>
+               
                 <form onSubmit={this.handleSubmit}>
                     <div class="field">
                       <label class="label">Title</label>
@@ -52,12 +55,31 @@ class ArticleNew extends Component {
                             <input class="input" type="text" placeholder="Author Name" ref="author" value={this.state.author} onChange={(event) => this.setState({author: event.target.value})}/>
                           </div>
                         </div>
+                      <div class="field">
+                          <label class="label">Image Link</label>
+                          <div class="control">
+                            <input class="input" type="text" placeholder="Paste URL" ref="image" value={this.state.image} onChange={(event) => this.setState({image: event.target.value})}/>
+                          </div>
+                        </div>
+                       
+                       
+                        <div class="field">
+                          <label class="label">Date</label>
+                          <div class="control">
+                            <input class="input" type="text" placeholder="Date" ref="created_at" value={this.state.created_at} onChange={(event) => this.setState({created_at: event.target.value})}/>
+                          </div>
+                        </div>
                    
                     <div class="field is-grouped">
                           <div class="control">
                             <button class="button is-link">Create</button>
                           </div>
                     </div>
+                    <a className='cancelLink'
+                    onClick={() => this.props.history.push('/articles')}
+                  >
+                    Cancel
+                  </a>
                 </form>
             </div>
         );

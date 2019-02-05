@@ -1,4 +1,4 @@
-/* Footer CSS */
+/* Header CSS */
 
 li {
   border-right: 1px solid #bbb;
@@ -33,9 +33,7 @@ li a:hover {
   background-color: #4CAF50;
 }
 
-.loginnav {
-  float: right;
-}
+
 .active {
   background-color: #4CAF50;
   float: right;
@@ -45,4 +43,33 @@ li a:hover {
   position: fixed;
   top: 0;
   width: 100%
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #B31B34;
+  z-index:1000; 
+  }
+
+#toprow{
+    position:fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    margin:0;
+    padding:0;
+    background-color: #333333;
+    margin-top:50px;
+    z-index:1000; 
+   }
+
+/* Footer CSS */
+
+.footerP {
+    text-align: center;
+    font-size: 2px;
 }

@@ -20,9 +20,9 @@ Article.create(
 	"It is far more user-friendly than the traditional method of presenting results purely in an academic paper."
 	"We have provided a detailed, comprehensive atlas of the ways that mental disorders cluster together available openly for public use, and we hope that this informs better practice, better clinical care, and future research."
 	The next step for Professor McGrath and his colleagues is to extend the study to identify the risks between mental disorders and the subsequent onset of general medical conditions, such as epilepsy, migraine, heart attacks, and diabetes.
-	The paper was published in JAMA Psychiatry and supported by the Danish National Research Foundation.', author: 'https://www.sciencedaily.com/releases/2019/01/190117090515.htm')
+	The paper was published in JAMA Psychiatry and supported by the Danish National Research Foundation.', image: 'https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500', author: 'https://www.sciencedaily.com/releases/2019/01/190117090515.htm')
 Article.create(
-	title: '10 Natural Depression Treatments' , content:'Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.
+	title: '10 Natural Depression Treatments' , content: 'Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.
 	These tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.
 	Depression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.
 	2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.
@@ -34,9 +34,10 @@ Article.create(
 	4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.
 	Although nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.
 	5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.
-	What can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.' , author: 'R. Morgan Griffin')
-Article.create(
-	title: "What Is Depression?" , content:'Depression (major depressive disorder) is a common and serious medical illness that negatively affects how you feel, the way you think and how you act. Fortunately, it is also treatable. Depression causes feelings of sadness and/or a loss of interest in activities once enjoyed. It can lead to a variety of emotional and physical problems and can decrease a person’s ability to function at work and at home.
+	What can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.' , 
+	image: 'https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500', author: 'R. Morgan Griffin')
+	Article.create(
+	title: "What Is Depression?" , content: 'Depression (major depressive disorder) is a common and serious medical illness that negatively affects how you feel, the way you think and how you act. Fortunately, it is also treatable. Depression causes feelings of sadness and/or a loss of interest in activities once enjoyed. It can lead to a variety of emotional and physical problems and can decrease a person’s ability to function at work and at home.
 
 	Depression symptoms can vary from mild to severe and can include:
 
@@ -109,7 +110,7 @@ Article.create(
 	American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders (DSM-5), Fifth edition. 2013.
 	National Institute of Mental Health. (Data from 2013 National Survey on Drug Use and Health.) www.nimh.nih.gov/health/statistics/prevalence/major-depression-among-adults.shtml
 	Kessler, RC, et al. Lifetime Prevalence and Age-of-Onset Distributions of DSM-IV Disorders in the National Comorbidity Survey Replication. Arch Gen Psychiatry. 2005;62(6):593602. http://archpsyc.jamanetwork.com/article.aspx?articleid=208678
-	', author: 'https://www.psychiatry.org/patients-families/depression/what-is-depression' )
+	', image: 'https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500', author: 'https://www.psychiatry.org/patients-families/depression/what-is-depression' )
    
 
     

@@ -125,7 +125,7 @@ const Health = () => {
 	then at least try to use in moderation. </p>
 
 	<div className="column">
-		<h1><a href="https://www.forbes.com/sites/alicegwalton/2017/06/30/a-run-down-of-social-medias-effects-on-our-mental-health/#246bc3002e5a" target="_blank"> Original Post</a></h1>
+		<p><a href="https://www.forbes.com/sites/alicegwalton/2017/06/30/a-run-down-of-social-medias-effects-on-our-mental-health/#246bc3002e5a" target="_blank"> Original Post</a></p>
 	</div>
 
     </div>
