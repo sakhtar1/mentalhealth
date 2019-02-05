@@ -61,14 +61,6 @@ class ArticleNew extends Component {
                             <input class="input" type="text" placeholder="Paste URL" ref="image" value={this.state.image} onChange={(event) => this.setState({image: event.target.value})}/>
                           </div>
                         </div>
-                       
-                       
-                        <div class="field">
-                          <label class="label">Date</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="Date" ref="created_at" value={this.state.created_at} onChange={(event) => this.setState({created_at: event.target.value})}/>
-                          </div>
-                        </div>
                    
                     <div class="field is-grouped">
                           <div class="control">

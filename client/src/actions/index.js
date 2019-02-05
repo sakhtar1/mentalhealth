@@ -1,6 +1,6 @@
  const API_URL = 'http://localhost:3001/api';
 
-export const login = user => {
+export const login = (user) => {
   return {
     type: 'LOGIN',
     user
@@ -17,8 +17,8 @@ export const login = user => {
 
 
 
-export const substituteArticle = article => {
-  return { type: 'SUBSTITUTE_ARTICLE', article };
+export const likeArticle = (article) => {
+  return { type: 'LIKE_ARTICLE', article };
 };
 
 
@@ -78,7 +78,7 @@ export const deleteArticle = (articleId, routerHistory) => {
   };
 };
 
-export const updateArticle = (article) => {
+export const likesArticle = (article) => {
   return dispatch => {
     return fetch(`${API_URL}/articles/${article.id}`, {
       method: 'PUT',
@@ -89,7 +89,7 @@ export const updateArticle = (article) => {
     })
     .then(res => res.json())
     .then(article => {
-      dispatch(substituteArticle(article));
+      dispatch(likeArticle(article));
     }).catch(err => console.log(err));
   };
 };

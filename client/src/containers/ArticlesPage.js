@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteArticle, updateArticle } from '../actions/index';
+import { deleteArticle, likesArticle } from '../actions/index';
 import moment from "moment";
 
 
@@ -12,8 +12,15 @@ class ArticlesPage extends Component {
         this.props.history.push({pathname:'/articles/'});
     }
 
+    handleClickLike = () => {
+        let currentArticle = this.props.article[0].id
+        currentArticle.likes += 1;
+        this.props.likesArticle(currentArticle);
+   };
+
     render(){
-            
+    
+        let keyword = this.props.article[0].likes === 1 ? 'like' : 'likes';
                 
         return(
             <div class="articleshow">
@@ -33,7 +40,14 @@ class ArticlesPage extends Component {
                 <p> Author: {this.props.article[0].author}</p>
                 <br></br>
                 <div>
-                    <h7> Date: { moment(this.props.article[0].created_at).format('MMMM Do YYYY') }</h7>
+                    <p> Date: { moment(this.props.article[0].created_at).format('MMMM Do YYYY') }</p>
+                </div>
+                <br></br>
+                <div>
+                    <input type='button' value='Like me' onClick={this.handleClickLike} />
+                      <div style={{display: 'inline', marginLeft: 10}}>
+                        { this.props.article[0].likes} {keyword}
+                        </div>
                 </div>
                 <br></br>
                 <div class="field">
@@ -52,5 +66,5 @@ const mapStateToProps = state => {
        article: state.articleView[0]
     }
 }
-export default connect(mapStateToProps, { deleteArticle, updateArticle })(ArticlesPage);
+export default connect(mapStateToProps, { deleteArticle, likesArticle })(ArticlesPage);
 

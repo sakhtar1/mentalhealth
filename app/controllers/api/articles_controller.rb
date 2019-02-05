@@ -41,7 +41,7 @@ module Api
 				@article = Article.find_by(id: params[:id])
 			end
 			def article_params
-	       	 params.require(:article).permit(:title, :content, :author, :user_id, :created_at, :image)
+	       	 params.require(:article).permit(:title, :content, :author, :user_id, :created_at, :image, :likes)
 	    	end
 
 	end
