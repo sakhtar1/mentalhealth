@@ -6,7 +6,7 @@ import Homepage from './components/Homepage'
 import ArticleNew from './containers/ArticleNew';
 import Login from './containers/userLogin';
 import ArticlesPage from './containers/ArticlesPage';
-import ArticleEdit from './containers/ArticleEdit';
+
 
 
 
@@ -18,7 +18,6 @@ const Router = () => (
 		<Route exact path='/new-article' component={ArticleNew} />
 		<Route exact path='/login' component={Login} />
 		<Route exact path='/articles/:id' component={ArticlesPage} />
-		<Route exact path='/articles/:id/edit-article' component={ArticleEdit} />
 		
 	</Switch>
 	)

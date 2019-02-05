@@ -11,10 +11,6 @@ class ArticlesPage extends Component {
         this.props.deleteArticle(this.props.article[0].id);
         this.props.history.push({pathname:'/articles/'});
     }
-    handleClickUpdate = (article) => {
-        this.props.updateArticle(this.props.article[0].id);
-        this.props.history.push({pathname:`/articles/${article[0].id}}/edit-article`});
-    }
 
     render(){
             
@@ -44,13 +40,6 @@ class ArticlesPage extends Component {
                         <p class="control">
                           <button class="button is-success" onClick={this.handleClick}>
                             Delete
-                          </button>
-                        </p>
-                      </div>
-                <div class="field">
-                        <p class>
-                          <button class="button is-success" onClick={this.handleClickUpdate}>
-                            Update
                           </button>
                         </p>
                       </div>
