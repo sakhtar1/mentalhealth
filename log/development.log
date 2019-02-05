@@ -9856,3 +9856,1642 @@ Processing by Api::ArticlesController#index as */*
 Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/api/articles" for ::1 at 2019-02-05 12:15:52 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (4.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.77ms)
+Completed 200 OK in 18ms (Views: 12.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:19:20 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.66ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:19:33 -0500
+Processing by Api::ArticlesController#create as */*
+Started GET "/api/articles" for ::1 at 2019-02-05 12:19:33 -0500
+  Parameters: {"article"=>{"title"=>"sds", "content"=>"aasd", "author"=>"sdsd", "created_at"=>"", "image"=>""}}
+Processing by Api::ArticlesController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  ↳ app/controllers/api/articles_controller.rb:6
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "sds"], ["content", "aasd"], ["created_at", "2019-02-05 17:19:33.679659"], ["updated_at", "2019-02-05 17:19:33.679659"], ["author", "sdsd"], ["image", ""]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.75ms)
+  ↳ app/controllers/api/articles_controller.rb:10
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 1.4ms)
+
+
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 39ms (Views: 1.5ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:19:38 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.87ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/api/articles/11" for ::1 at 2019-02-05 12:19:38 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.6ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 12ms (Views: 2.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:20:26 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.04ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/sad" for 127.0.0.1 at 2019-02-05 12:20:28 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/sad"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/articles" for ::1 at 2019-02-05 12:20:30 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.32ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/articles/10" for ::1 at 2019-02-05 12:20:30 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (2.0ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+Completed 200 OK in 11ms (Views: 2.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:21:03 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.69ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:21:13 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.31ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:21:22 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"sdad", "content"=>"asdsad", "author"=>"sad", "created_at"=>"", "image"=>"adasds"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "sdad"], ["content", "asdsad"], ["created_at", "2019-02-05 17:21:22.121060"], ["updated_at", "2019-02-05 17:21:22.121060"], ["author", "sad"], ["image", "adasds"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 10ms (Views: 1.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:21:23 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.9ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/adasds" for 127.0.0.1 at 2019-02-05 12:21:25 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/adasds"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/articles" for ::1 at 2019-02-05 12:21:26 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.94ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/articles/12" for ::1 at 2019-02-05 12:21:26 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.6ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 12]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:21:30 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.48ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:21:38 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.82ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:21:46 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"dsad", "content"=>"sdsad", "author"=>"sad", "created_at"=>"", "image"=>"sdd"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.9ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "dsad"], ["content", "sdsad"], ["created_at", "2019-02-05 17:21:46.621138"], ["updated_at", "2019-02-05 17:21:46.621138"], ["author", "sad"], ["image", "sdd"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:21:47 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.23ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/sdd" for 127.0.0.1 at 2019-02-05 12:21:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/sdd"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/api/articles/13" for ::1 at 2019-02-05 12:21:51 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.6ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 13]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 10ms (Views: 1.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:22:07 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.74ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:22:16 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"sdsa", "content"=>"sadsad", "author"=>"sadsd", "created_at"=>"", "image"=>"adsad"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "sdsa"], ["content", "sadsad"], ["created_at", "2019-02-05 17:22:16.723079"], ["updated_at", "2019-02-05 17:22:16.723079"], ["author", "sadsd"], ["image", "adsad"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:22:17 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (4.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.14ms)
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/articles/adsad" for 127.0.0.1 at 2019-02-05 12:22:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/adsad"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/api/articles/14" for ::1 at 2019-02-05 12:22:20 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (1.4ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 14]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+Completed 200 OK in 8ms (Views: 1.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:25:18 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.96ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:25:25 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"sadsa", "content"=>"sdsd", "author"=>"sad", "created_at"=>"", "image"=>"sdsa"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "sadsa"], ["content", "sdsd"], ["created_at", "2019-02-05 17:25:25.067049"], ["updated_at", "2019-02-05 17:25:25.067049"], ["author", "sad"], ["image", "sdsa"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 10ms (Views: 1.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:25:26 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.88ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/sdsa" for 127.0.0.1 at 2019-02-05 12:25:28 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/sdsa"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/articles" for ::1 at 2019-02-05 12:25:30 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.73ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/api/articles/15" for ::1 at 2019-02-05 12:25:30 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.6ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 15]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:25:52 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.49ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:26:04 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"ads", "content"=>"asd", "author"=>"ad", "created_at"=>"", "image"=>"ad"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "ads"], ["content", "asd"], ["created_at", "2019-02-05 17:26:04.037800"], ["updated_at", "2019-02-05 17:26:04.037800"], ["author", "ad"], ["image", "ad"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:26:05 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.08ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/ad" for 127.0.0.1 at 2019-02-05 12:26:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/ad"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/api/articles/16" for ::1 at 2019-02-05 12:28:00 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.6ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:28:37 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.24ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:28:48 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"asa", "content"=>"asa", "author"=>"asa", "created_at"=>"", "image"=>"as"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "asa"], ["content", "asa"], ["created_at", "2019-02-05 17:28:48.281098"], ["updated_at", "2019-02-05 17:28:48.281098"], ["author", "asa"], ["image", "as"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:28:49 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.8ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/as" for 127.0.0.1 at 2019-02-05 12:28:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/as"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/api/articles/17" for ::1 at 2019-02-05 12:28:53 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.4ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 17]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.6ms)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:29:12 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.19ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:29:43 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.6ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:34:10 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.8ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:35:16 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.98ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:35:28 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.23ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:35:28 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"asas", "content"=>"asas", "author"=>"asa", "created_at"=>"", "image"=>"asa"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (3.1ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "asas"], ["content", "asas"], ["created_at", "2019-02-05 17:35:28.946477"], ["updated_at", "2019-02-05 17:35:28.946477"], ["author", "asa"], ["image", "asa"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.7ms)
+Completed 200 OK in 16ms (Views: 2.0ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/articles/asa" for 127.0.0.1 at 2019-02-05 12:35:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/asa"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/api/articles/18" for ::1 at 2019-02-05 12:35:36 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.5ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 18]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:36:15 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.65ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:36:24 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"wewe", "content"=>"wewqe", "author"=>"wdwae", "created_at"=>"", "image"=>"wewqe"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "wewe"], ["content", "wewqe"], ["created_at", "2019-02-05 17:36:24.674677"], ["updated_at", "2019-02-05 17:36:24.674677"], ["author", "wdwae"], ["image", "wewqe"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:36:25 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.02ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/wewqe" for 127.0.0.1 at 2019-02-05 12:36:28 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/wewqe"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/articles" for ::1 at 2019-02-05 12:36:30 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.3ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/articles/19" for ::1 at 2019-02-05 12:36:30 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.5ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 19]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.62ms)
+Completed 200 OK in 13ms (Views: 2.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:36:36 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.76ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:37:58 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.66ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:38:10 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"wew", "content"=>"wew", "author"=>"we", "created_at"=>"", "image"=>"wdwdd"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "wew"], ["content", "wew"], ["created_at", "2019-02-05 17:38:10.094518"], ["updated_at", "2019-02-05 17:38:10.094518"], ["author", "we"], ["image", "wdwdd"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:38:11 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.09ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/wdwdd" for 127.0.0.1 at 2019-02-05 12:38:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/wdwdd"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/api/articles/20" for ::1 at 2019-02-05 12:38:13 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.6ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 20]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 200 OK in 12ms (Views: 1.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:38:32 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.51ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:39:15 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.58ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:39:21 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"ww", "content"=>"we", "author"=>"wqe", "created_at"=>"", "image"=>"we"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.9ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "ww"], ["content", "we"], ["created_at", "2019-02-05 17:39:21.194711"], ["updated_at", "2019-02-05 17:39:21.194711"], ["author", "wqe"], ["image", "we"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:39:22 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.14ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/we" for 127.0.0.1 at 2019-02-05 12:39:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/we"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/api/articles/21" for ::1 at 2019-02-05 12:39:26 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.6ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 21]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:40:19 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.56ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/api/articles/1" for ::1 at 2019-02-05 12:40:23 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>1, "title"=>"Risk for developing more than one mental health disorder revealed", "content"=>"The risk of developing a second mental health disorder after an initial diagnosis is increased, according to new research led by Professor John McGrath from UQs Queensland Brain Institute and Aarhus University.\n\tProfessor McGrath and colleagues looked at Danish health data across a record 5.9 million individuals, providing the largest and most comprehensive study of comorbidity -- the development of two or more mental health disorders.\n\tThis long time frame enabled researchers to track a persons mental health for extended periods of time, and resulted in the startling finding that risk of a second mental health diagnosis remains high, even fifteen years after an initial diagnosis.\n\t\"In the first six months after initial diagnosis, the risk of a second mental health diagnosis is very high: so for example, people diagnosed with mood disorders like depression have a very high risk of being diagnosed with a neurotic disorder like anxiety in the first six months since diagnosis,\" Professor McGrath said.\n\t\"After the first year this risk drops substantially, but it then stabilises and remains 2 or 3 times higher than those without a prior disorder, even fifteen years after initial diagnosis.\"\n\t\"Importantly, the result was pervasive -- we found it across all pairs of disorders that we studied.\"\n\tThe findings also suggest that for some pairs of disorders, it did not matter which one came first -- there was an increased risk of developing the other disorders. For example, an initial diagnosis of depression was just as likely to be followed by a second diagnosis of anxiety, and vice versa.\n\tImportantly, people who were younger than 20 at the onset of their first mental disorder were significantly more at risk of developing a second disorderover the next 10-15 years, and this vulnerability was found across most pairs of disorders.\n\t\"We found that in younger people, mental health disorders were more \"pluripotent\", meaning an observed change or disruption in mental health was more flexible in the direction it manifested as a disorder,\" Professor McGrath said.\n\tNot only is the study the largest and most comprehensive in its field, but its innovative presentation of results has set a new standard for epidemiology (the study of health and disease data), said Professor McGrath.\n\t\"The paper is open access, with all data available and code free to download, and results presented in an interactive website with educational videos,\" he said.\n\t\"It is far more user-friendly than the traditional method of presenting results purely in an academic paper.\"\n\t\"We have provided a detailed, comprehensive atlas of the ways that mental disorders cluster together available openly for public use, and we hope that this informs better practice, better clinical care, and future research.\"\n\tThe next step for Professor McGrath and his colleagues is to extend the study to identify the risks between mental disorders and the subsequent onset of general medical conditions, such as epilepsy, migraine, heart attacks, and diabetes.\n\tThe paper was published in JAMA Psychiatry and supported by the Danish National Research Foundation.", "author"=>"https://www.sciencedaily.com/releases/2019/01/190117090515.htm", "created_at"=>"2019-02-05T00:17:49.607Z", "image"=>"https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>13}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 13], ["updated_at", "2019-02-05 17:40:23.632547"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 9ms (Views: 1.9ms | ActiveRecord: 2.4ms)
+
+
+Started PUT "/api/articles/1" for ::1 at 2019-02-05 12:40:25 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>1, "title"=>"Risk for developing more than one mental health disorder revealed", "content"=>"The risk of developing a second mental health disorder after an initial diagnosis is increased, according to new research led by Professor John McGrath from UQs Queensland Brain Institute and Aarhus University.\n\tProfessor McGrath and colleagues looked at Danish health data across a record 5.9 million individuals, providing the largest and most comprehensive study of comorbidity -- the development of two or more mental health disorders.\n\tThis long time frame enabled researchers to track a persons mental health for extended periods of time, and resulted in the startling finding that risk of a second mental health diagnosis remains high, even fifteen years after an initial diagnosis.\n\t\"In the first six months after initial diagnosis, the risk of a second mental health diagnosis is very high: so for example, people diagnosed with mood disorders like depression have a very high risk of being diagnosed with a neurotic disorder like anxiety in the first six months since diagnosis,\" Professor McGrath said.\n\t\"After the first year this risk drops substantially, but it then stabilises and remains 2 or 3 times higher than those without a prior disorder, even fifteen years after initial diagnosis.\"\n\t\"Importantly, the result was pervasive -- we found it across all pairs of disorders that we studied.\"\n\tThe findings also suggest that for some pairs of disorders, it did not matter which one came first -- there was an increased risk of developing the other disorders. For example, an initial diagnosis of depression was just as likely to be followed by a second diagnosis of anxiety, and vice versa.\n\tImportantly, people who were younger than 20 at the onset of their first mental disorder were significantly more at risk of developing a second disorderover the next 10-15 years, and this vulnerability was found across most pairs of disorders.\n\t\"We found that in younger people, mental health disorders were more \"pluripotent\", meaning an observed change or disruption in mental health was more flexible in the direction it manifested as a disorder,\" Professor McGrath said.\n\tNot only is the study the largest and most comprehensive in its field, but its innovative presentation of results has set a new standard for epidemiology (the study of health and disease data), said Professor McGrath.\n\t\"The paper is open access, with all data available and code free to download, and results presented in an interactive website with educational videos,\" he said.\n\t\"It is far more user-friendly than the traditional method of presenting results purely in an academic paper.\"\n\t\"We have provided a detailed, comprehensive atlas of the ways that mental disorders cluster together available openly for public use, and we hope that this informs better practice, better clinical care, and future research.\"\n\tThe next step for Professor McGrath and his colleagues is to extend the study to identify the risks between mental disorders and the subsequent onset of general medical conditions, such as epilepsy, migraine, heart attacks, and diabetes.\n\tThe paper was published in JAMA Psychiatry and supported by the Danish National Research Foundation.", "author"=>"https://www.sciencedaily.com/releases/2019/01/190117090515.htm", "created_at"=>"2019-02-05T00:17:49.607Z", "image"=>"https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>14}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 14], ["updated_at", "2019-02-05 17:40:25.124584"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 1.6ms)
+
+
+Started PUT "/api/articles/1" for ::1 at 2019-02-05 12:40:25 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>1, "title"=>"Risk for developing more than one mental health disorder revealed", "content"=>"The risk of developing a second mental health disorder after an initial diagnosis is increased, according to new research led by Professor John McGrath from UQs Queensland Brain Institute and Aarhus University.\n\tProfessor McGrath and colleagues looked at Danish health data across a record 5.9 million individuals, providing the largest and most comprehensive study of comorbidity -- the development of two or more mental health disorders.\n\tThis long time frame enabled researchers to track a persons mental health for extended periods of time, and resulted in the startling finding that risk of a second mental health diagnosis remains high, even fifteen years after an initial diagnosis.\n\t\"In the first six months after initial diagnosis, the risk of a second mental health diagnosis is very high: so for example, people diagnosed with mood disorders like depression have a very high risk of being diagnosed with a neurotic disorder like anxiety in the first six months since diagnosis,\" Professor McGrath said.\n\t\"After the first year this risk drops substantially, but it then stabilises and remains 2 or 3 times higher than those without a prior disorder, even fifteen years after initial diagnosis.\"\n\t\"Importantly, the result was pervasive -- we found it across all pairs of disorders that we studied.\"\n\tThe findings also suggest that for some pairs of disorders, it did not matter which one came first -- there was an increased risk of developing the other disorders. For example, an initial diagnosis of depression was just as likely to be followed by a second diagnosis of anxiety, and vice versa.\n\tImportantly, people who were younger than 20 at the onset of their first mental disorder were significantly more at risk of developing a second disorderover the next 10-15 years, and this vulnerability was found across most pairs of disorders.\n\t\"We found that in younger people, mental health disorders were more \"pluripotent\", meaning an observed change or disruption in mental health was more flexible in the direction it manifested as a disorder,\" Professor McGrath said.\n\tNot only is the study the largest and most comprehensive in its field, but its innovative presentation of results has set a new standard for epidemiology (the study of health and disease data), said Professor McGrath.\n\t\"The paper is open access, with all data available and code free to download, and results presented in an interactive website with educational videos,\" he said.\n\t\"It is far more user-friendly than the traditional method of presenting results purely in an academic paper.\"\n\t\"We have provided a detailed, comprehensive atlas of the ways that mental disorders cluster together available openly for public use, and we hope that this informs better practice, better clinical care, and future research.\"\n\tThe next step for Professor McGrath and his colleagues is to extend the study to identify the risks between mental disorders and the subsequent onset of general medical conditions, such as epilepsy, migraine, heart attacks, and diabetes.\n\tThe paper was published in JAMA Psychiatry and supported by the Danish National Research Foundation.", "author"=>"https://www.sciencedaily.com/releases/2019/01/190117090515.htm", "created_at"=>"2019-02-05T00:17:49.607Z", "image"=>"https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>15}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 15], ["updated_at", "2019-02-05 17:40:25.707675"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 2.2ms)
+
+
+Started PUT "/api/articles/1" for ::1 at 2019-02-05 12:40:26 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>1, "title"=>"Risk for developing more than one mental health disorder revealed", "content"=>"The risk of developing a second mental health disorder after an initial diagnosis is increased, according to new research led by Professor John McGrath from UQs Queensland Brain Institute and Aarhus University.\n\tProfessor McGrath and colleagues looked at Danish health data across a record 5.9 million individuals, providing the largest and most comprehensive study of comorbidity -- the development of two or more mental health disorders.\n\tThis long time frame enabled researchers to track a persons mental health for extended periods of time, and resulted in the startling finding that risk of a second mental health diagnosis remains high, even fifteen years after an initial diagnosis.\n\t\"In the first six months after initial diagnosis, the risk of a second mental health diagnosis is very high: so for example, people diagnosed with mood disorders like depression have a very high risk of being diagnosed with a neurotic disorder like anxiety in the first six months since diagnosis,\" Professor McGrath said.\n\t\"After the first year this risk drops substantially, but it then stabilises and remains 2 or 3 times higher than those without a prior disorder, even fifteen years after initial diagnosis.\"\n\t\"Importantly, the result was pervasive -- we found it across all pairs of disorders that we studied.\"\n\tThe findings also suggest that for some pairs of disorders, it did not matter which one came first -- there was an increased risk of developing the other disorders. For example, an initial diagnosis of depression was just as likely to be followed by a second diagnosis of anxiety, and vice versa.\n\tImportantly, people who were younger than 20 at the onset of their first mental disorder were significantly more at risk of developing a second disorderover the next 10-15 years, and this vulnerability was found across most pairs of disorders.\n\t\"We found that in younger people, mental health disorders were more \"pluripotent\", meaning an observed change or disruption in mental health was more flexible in the direction it manifested as a disorder,\" Professor McGrath said.\n\tNot only is the study the largest and most comprehensive in its field, but its innovative presentation of results has set a new standard for epidemiology (the study of health and disease data), said Professor McGrath.\n\t\"The paper is open access, with all data available and code free to download, and results presented in an interactive website with educational videos,\" he said.\n\t\"It is far more user-friendly than the traditional method of presenting results purely in an academic paper.\"\n\t\"We have provided a detailed, comprehensive atlas of the ways that mental disorders cluster together available openly for public use, and we hope that this informs better practice, better clinical care, and future research.\"\n\tThe next step for Professor McGrath and his colleagues is to extend the study to identify the risks between mental disorders and the subsequent onset of general medical conditions, such as epilepsy, migraine, heart attacks, and diabetes.\n\tThe paper was published in JAMA Psychiatry and supported by the Danish National Research Foundation.", "author"=>"https://www.sciencedaily.com/releases/2019/01/190117090515.htm", "created_at"=>"2019-02-05T00:17:49.607Z", "image"=>"https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>16}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 16], ["updated_at", "2019-02-05 17:40:26.200991"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 2.4ms)
+
+
+Started PUT "/api/articles/1" for ::1 at 2019-02-05 12:40:26 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>1, "title"=>"Risk for developing more than one mental health disorder revealed", "content"=>"The risk of developing a second mental health disorder after an initial diagnosis is increased, according to new research led by Professor John McGrath from UQs Queensland Brain Institute and Aarhus University.\n\tProfessor McGrath and colleagues looked at Danish health data across a record 5.9 million individuals, providing the largest and most comprehensive study of comorbidity -- the development of two or more mental health disorders.\n\tThis long time frame enabled researchers to track a persons mental health for extended periods of time, and resulted in the startling finding that risk of a second mental health diagnosis remains high, even fifteen years after an initial diagnosis.\n\t\"In the first six months after initial diagnosis, the risk of a second mental health diagnosis is very high: so for example, people diagnosed with mood disorders like depression have a very high risk of being diagnosed with a neurotic disorder like anxiety in the first six months since diagnosis,\" Professor McGrath said.\n\t\"After the first year this risk drops substantially, but it then stabilises and remains 2 or 3 times higher than those without a prior disorder, even fifteen years after initial diagnosis.\"\n\t\"Importantly, the result was pervasive -- we found it across all pairs of disorders that we studied.\"\n\tThe findings also suggest that for some pairs of disorders, it did not matter which one came first -- there was an increased risk of developing the other disorders. For example, an initial diagnosis of depression was just as likely to be followed by a second diagnosis of anxiety, and vice versa.\n\tImportantly, people who were younger than 20 at the onset of their first mental disorder were significantly more at risk of developing a second disorderover the next 10-15 years, and this vulnerability was found across most pairs of disorders.\n\t\"We found that in younger people, mental health disorders were more \"pluripotent\", meaning an observed change or disruption in mental health was more flexible in the direction it manifested as a disorder,\" Professor McGrath said.\n\tNot only is the study the largest and most comprehensive in its field, but its innovative presentation of results has set a new standard for epidemiology (the study of health and disease data), said Professor McGrath.\n\t\"The paper is open access, with all data available and code free to download, and results presented in an interactive website with educational videos,\" he said.\n\t\"It is far more user-friendly than the traditional method of presenting results purely in an academic paper.\"\n\t\"We have provided a detailed, comprehensive atlas of the ways that mental disorders cluster together available openly for public use, and we hope that this informs better practice, better clinical care, and future research.\"\n\tThe next step for Professor McGrath and his colleagues is to extend the study to identify the risks between mental disorders and the subsequent onset of general medical conditions, such as epilepsy, migraine, heart attacks, and diabetes.\n\tThe paper was published in JAMA Psychiatry and supported by the Danish National Research Foundation.", "author"=>"https://www.sciencedaily.com/releases/2019/01/190117090515.htm", "created_at"=>"2019-02-05T00:17:49.607Z", "image"=>"https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>17}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 17], ["updated_at", "2019-02-05 17:40:26.603065"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:41:10 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.49ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:48:39 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.69ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:49:00 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"wqe", "content"=>"wqe", "author"=>"wdw", "created_at"=>"", "image"=>"ww"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (3.0ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "wqe"], ["content", "wqe"], ["created_at", "2019-02-05 17:49:00.016929"], ["updated_at", "2019-02-05 17:49:00.016929"], ["author", "wdw"], ["image", "ww"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/articles" for ::1 at 2019-02-05 12:49:00 -0500
+  ↳ app/controllers/api/articles_controller.rb:10
+Processing by Api::ArticlesController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  ↳ app/controllers/api/articles_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.95ms)
+  ↳ app/controllers/api/articles_controller.rb:11
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 1.4ms)
+
+
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 32ms (Views: 2.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:49:47 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.3ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:50:04 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.18ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:50:33 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.31ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/ww" for 127.0.0.1 at 2019-02-05 12:50:35 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/ww"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PUT "/api/articles/22" for ::1 at 2019-02-05 12:50:37 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>22, "title"=>"wqe", "content"=>"wqe", "author"=>"wdw", "created_at"=>"2019-02-05T17:49:00.016Z", "image"=>"ww", "likes"=>1}, "id"=>"22"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (1.5ms)[0m  [1m[33mUPDATE "articles" SET "created_at" = ?, "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["created_at", "2019-02-05 17:49:00.016000"], ["likes", 1], ["updated_at", "2019-02-05 17:50:37.916978"], ["id", 22]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 3.4ms)
+
+
+Started PUT "/api/articles/22" for ::1 at 2019-02-05 12:50:38 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>22, "title"=>"wqe", "content"=>"wqe", "author"=>"wdw", "created_at"=>"2019-02-05T17:49:00.016Z", "image"=>"ww", "likes"=>2}, "id"=>"22"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.5ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 2], ["updated_at", "2019-02-05 17:50:38.334739"], ["id", 22]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.24ms)
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 2.5ms)
+
+
+Started PUT "/api/articles/22" for ::1 at 2019-02-05 12:50:38 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>22, "title"=>"wqe", "content"=>"wqe", "author"=>"wdw", "created_at"=>"2019-02-05T17:49:00.016Z", "image"=>"ww", "likes"=>3}, "id"=>"22"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 3], ["updated_at", "2019-02-05 17:50:38.607725"], ["id", 22]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 2.3ms)
+
+
+Started PUT "/api/articles/22" for ::1 at 2019-02-05 12:50:38 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>22, "title"=>"wqe", "content"=>"wqe", "author"=>"wdw", "created_at"=>"2019-02-05T17:49:00.016Z", "image"=>"ww", "likes"=>4}, "id"=>"22"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 4], ["updated_at", "2019-02-05 17:50:38.798874"], ["id", 22]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/api/articles/22" for ::1 at 2019-02-05 12:51:23 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.6ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 22]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 11ms (Views: 2.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:51:30 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.47ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:52:15 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.92ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:52:23 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"wqe", "content"=>"we", "author"=>"wqe", "created_at"=>"", "image"=>"we"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "wqe"], ["content", "we"], ["created_at", "2019-02-05 17:52:23.919826"], ["updated_at", "2019-02-05 17:52:23.919826"], ["author", "wqe"], ["image", "we"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:52:25 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.59ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/we" for 127.0.0.1 at 2019-02-05 12:52:27 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/we"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/api/articles/23" for ::1 at 2019-02-05 12:52:28 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"23"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.7ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 23]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:53:39 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.62ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:53:49 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"eqw", "content"=>"weq", "author"=>"ewq", "created_at"=>"", "image"=>"weqwe"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "eqw"], ["content", "weq"], ["created_at", "2019-02-05 17:53:49.502431"], ["updated_at", "2019-02-05 17:53:49.502431"], ["author", "ewq"], ["image", "weqwe"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 11ms (Views: 1.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:53:50 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.43ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 12:53:57 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"wqe", "content"=>"qe", "author"=>"we", "created_at"=>"", "image"=>"wqe"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "wqe"], ["content", "qe"], ["created_at", "2019-02-05 17:53:57.839706"], ["updated_at", "2019-02-05 17:53:57.839706"], ["author", "we"], ["image", "wqe"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 10ms (Views: 1.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 12:53:59 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.8ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/wqe" for 127.0.0.1 at 2019-02-05 12:54:01 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/wqe"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/api/articles/25" for ::1 at 2019-02-05 12:54:03 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"25"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.5ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 25]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 13:00:50 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.41ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 2.1ms)
+
+
+Started PUT "/api/articles/6" for ::1 at 2019-02-05 13:00:57 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>6, "title"=>"6 Ways Social Media Affects Our Mental Health", "content"=>"Health experts love to say that sitting is the new smoking. Given the number of diseases to which sitting is linked, and the number of people it apparently kills every year, sitting is one of the worst things we can do for health. But possibly as concerning is the thing that we often do while we're sitting: Mindlessly scrolling through our social media feeds when we have a few spare minutes (or for some, hours). And as we probably know intuitively, and as the research is confirming, it's not the best habit when it comes to our collective psychology. The American Academy of Pediatrics has warned about the potential for negative effects of social media in young kids and teens, including cyber-bullying and \"Facebook depression.\" But the same risks may be true for adults, across generations. Here's a quick run-down of the studies that have shown that social media isn't very good for mental well-being, and in some ways, it can be pretty damaging.\n\nIt’s addictive\nExperts have not been in total agreement on whether internet addiction is a real thing, let alone social media addiction, but there’s some good evidence that both may exist. A review study from Nottingham Trent University looked back over earlier research on the psychological characteristics, personality and social media use. The authors conclude that “it may be plausible to speak specifically of ‘Facebook Addiction Disorder’…because addiction criteria, such as neglect of personal life, mental preoccupation, escapism, mood modifying experiences, tolerance and concealing the addictive behavior, appear to be present in some people who use [social networks] excessively.” (They also found that the motivation for people’s excessive use of social networks differs depending on certain traits—introverts and extroverts use it for different reasons, as do people with narcissistic traits. But that deserves a piece of its own.)\n\nAnd studies have confirmed that people tend to undergo a kind of withdrawal: A study a few years ago from Swansea University found that people experienced the psychological symptoms of withdrawal when they stopped using (this went for all internet use, not just social media). Their recent follow-up study found that when people stop using, they also undergo small but measurable physiological effects. Study author Phil Reed said, “We have known for some time that people who are over-dependent on digital devices report feelings of anxiety when they are stopped from using them, but now we can see that these psychological effects are accompanied by actual physiological changes.” Whether this is true of social media per se is unclear right now, but anecdotal evidence suggests it may be.\n\nIt triggers more sadness, less well-being\nThe more we use social media, the less happy we seem to be. One study a few years ago found that Facebook use was linked to both less moment-to-moment happiness and less life satisfaction—the more people used Facebook in a day, the more these two variables dropped off. The authors suggest this may have to do with the fact that Facebook conjures up a perception of social isolation, in a way that other solitary activities don’t. “On the surface,” the authors write, “Facebook provides an invaluable resource for fulfilling such needs by allowing people to instantly connect. Rather than enhancing well-being, as frequent interactions with supportive 'offline' social networks powerfully do, the current findings demonstrate that interacting with Facebook may predict the opposite result for young adults—it may undermine it.”\n\nIn fact, another study found that social media use is linked to greater feelings of social isolation. The team looked at how much people used 11 social media sites, including Facebook, Twitter, Google+, YouTube, LinkedIn, Instagram, Pinterest, Tumblr, Vine, Snapchat and Reddit, and correlated this with their “perceived social isolation.” Not surprisingly, it turned out that the more time people spent on these sites, the more socially isolated they perceived themselves to be. And perceived social isolation is one of the worst things for us, mentally and physically.\n\nComparing our lives with others is mentally unhealthy\nPart of the reason Facebook makes people feel socially isolated (even though they may not actually be) is the comparison factor. We fall into the trap of comparing ourselves to others as we scroll through our feeds, and make judgements about how we measure up. One study looked at how we make comparisons to others posts, in “upward” or “downward” directions—that is, feeling that we’re either better or worse off than our friends. It turned out that both types of comparisons made people feel worse, which is surprising, since in real life, only upward comparisons (feeling another person has it better than you) makes people feel bad. But in the social network world, it seems that any kind of comparison is linked to depressive symptoms.\n\nIt can lead to jealousy—and a vicious cycle\nIt’s no secret that the comparison factor in social media leads to jealousy—most people will admit that seeing other people’s tropical vacations and perfectly behaved kids is envy-inducing. Studies have certainly shown that social media use triggers feelings of jealousy. The authors of one study, looking at jealousy and other negative feelings while using Facebook, wrote that “This magnitude of envy incidents taking place on FB alone is astounding, providing evidence that FB offers a breeding ground for invidious feelings.\n\nThey add that it can become a vicious cycle: feeling jealous can make a person want to make his or her own life look better, and post jealousy-inducing posts of their own, in an endless circle of one-upping and feeling jealous. Another study looked at the connection between envy and depression in Facebook use and, interestingly, discovered that envy mediates the Facebook-depression link. That is, when envy is controlled for, Facebook isn’t so depressing. So it may be the envy that’s largely to blame in the depression-Facebook connection.\n\nWe get caught in the delusion of thinking it will help\nPart of the unhealthy cycle is that we keep coming back to social media, even though it doesn’t make us feel very good. This is probably because of what’s known as a forecasting error: Like a drug, we think getting a fix will help, but it actually makes us feel worse, which comes down to an error in our ability to predict our own response. One study looked at how people feel after using Facebook and how they think they’ll feel going in. Like other studies suggested, the participants in this one almost always felt worse after using it, compared to people engaging in other activities. But a follow-up experiment showed that people generally believed that they’d feel better after using, not worse. Which of course turns out not to be the case at all, and sounds a lot like the pattern in other types of addiction.\n\nMore friends on social doesn’t mean you’re more social\nA couple of years ago, a study found that more friends on social media doesn’t necessarily mean you have a better social life—there seems to be a cap on the number of friends a person’s brain can handle, and it takes actual social interaction (not virtual) to keep up these friendships. So feeling like you’re being social by being on Facebook doesn’t work. Since loneliness is linked to myriad health and mental health problems (including early death), getting real social support is important. Virtual friend time doesn’t have the therapeutic effect as time with real friends.\n\nAll of this is not to say that there’s no benefit to social media—obviously it keeps us connected across great distances, and helps us find people we’d lost touch with years ago. But getting on social when you have some time to kill, or, worse, need an emotional lift, is very likely a bad idea. And studies have found that taking a break from Facebook helps boost psychological well-being. If you are feeling brave, try taking a little break, and see how it goes. And if you are going to keep using, then at least try to use in moderation.", "author"=>"Alice G. Walton", "created_at"=>"2019-02-05T02:19:59.041Z", "image"=>"https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>8}, "id"=>"6"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.5ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 8], ["updated_at", "2019-02-05 18:00:57.139661"], ["id", 6]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 12ms (Views: 1.4ms | ActiveRecord: 3.1ms)
+
+
+Started PUT "/api/articles/6" for ::1 at 2019-02-05 13:01:10 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>6, "title"=>"6 Ways Social Media Affects Our Mental Health", "content"=>"Health experts love to say that sitting is the new smoking. Given the number of diseases to which sitting is linked, and the number of people it apparently kills every year, sitting is one of the worst things we can do for health. But possibly as concerning is the thing that we often do while we're sitting: Mindlessly scrolling through our social media feeds when we have a few spare minutes (or for some, hours). And as we probably know intuitively, and as the research is confirming, it's not the best habit when it comes to our collective psychology. The American Academy of Pediatrics has warned about the potential for negative effects of social media in young kids and teens, including cyber-bullying and \"Facebook depression.\" But the same risks may be true for adults, across generations. Here's a quick run-down of the studies that have shown that social media isn't very good for mental well-being, and in some ways, it can be pretty damaging.\n\nIt’s addictive\nExperts have not been in total agreement on whether internet addiction is a real thing, let alone social media addiction, but there’s some good evidence that both may exist. A review study from Nottingham Trent University looked back over earlier research on the psychological characteristics, personality and social media use. The authors conclude that “it may be plausible to speak specifically of ‘Facebook Addiction Disorder’…because addiction criteria, such as neglect of personal life, mental preoccupation, escapism, mood modifying experiences, tolerance and concealing the addictive behavior, appear to be present in some people who use [social networks] excessively.” (They also found that the motivation for people’s excessive use of social networks differs depending on certain traits—introverts and extroverts use it for different reasons, as do people with narcissistic traits. But that deserves a piece of its own.)\n\nAnd studies have confirmed that people tend to undergo a kind of withdrawal: A study a few years ago from Swansea University found that people experienced the psychological symptoms of withdrawal when they stopped using (this went for all internet use, not just social media). Their recent follow-up study found that when people stop using, they also undergo small but measurable physiological effects. Study author Phil Reed said, “We have known for some time that people who are over-dependent on digital devices report feelings of anxiety when they are stopped from using them, but now we can see that these psychological effects are accompanied by actual physiological changes.” Whether this is true of social media per se is unclear right now, but anecdotal evidence suggests it may be.\n\nIt triggers more sadness, less well-being\nThe more we use social media, the less happy we seem to be. One study a few years ago found that Facebook use was linked to both less moment-to-moment happiness and less life satisfaction—the more people used Facebook in a day, the more these two variables dropped off. The authors suggest this may have to do with the fact that Facebook conjures up a perception of social isolation, in a way that other solitary activities don’t. “On the surface,” the authors write, “Facebook provides an invaluable resource for fulfilling such needs by allowing people to instantly connect. Rather than enhancing well-being, as frequent interactions with supportive 'offline' social networks powerfully do, the current findings demonstrate that interacting with Facebook may predict the opposite result for young adults—it may undermine it.”\n\nIn fact, another study found that social media use is linked to greater feelings of social isolation. The team looked at how much people used 11 social media sites, including Facebook, Twitter, Google+, YouTube, LinkedIn, Instagram, Pinterest, Tumblr, Vine, Snapchat and Reddit, and correlated this with their “perceived social isolation.” Not surprisingly, it turned out that the more time people spent on these sites, the more socially isolated they perceived themselves to be. And perceived social isolation is one of the worst things for us, mentally and physically.\n\nComparing our lives with others is mentally unhealthy\nPart of the reason Facebook makes people feel socially isolated (even though they may not actually be) is the comparison factor. We fall into the trap of comparing ourselves to others as we scroll through our feeds, and make judgements about how we measure up. One study looked at how we make comparisons to others posts, in “upward” or “downward” directions—that is, feeling that we’re either better or worse off than our friends. It turned out that both types of comparisons made people feel worse, which is surprising, since in real life, only upward comparisons (feeling another person has it better than you) makes people feel bad. But in the social network world, it seems that any kind of comparison is linked to depressive symptoms.\n\nIt can lead to jealousy—and a vicious cycle\nIt’s no secret that the comparison factor in social media leads to jealousy—most people will admit that seeing other people’s tropical vacations and perfectly behaved kids is envy-inducing. Studies have certainly shown that social media use triggers feelings of jealousy. The authors of one study, looking at jealousy and other negative feelings while using Facebook, wrote that “This magnitude of envy incidents taking place on FB alone is astounding, providing evidence that FB offers a breeding ground for invidious feelings.\n\nThey add that it can become a vicious cycle: feeling jealous can make a person want to make his or her own life look better, and post jealousy-inducing posts of their own, in an endless circle of one-upping and feeling jealous. Another study looked at the connection between envy and depression in Facebook use and, interestingly, discovered that envy mediates the Facebook-depression link. That is, when envy is controlled for, Facebook isn’t so depressing. So it may be the envy that’s largely to blame in the depression-Facebook connection.\n\nWe get caught in the delusion of thinking it will help\nPart of the unhealthy cycle is that we keep coming back to social media, even though it doesn’t make us feel very good. This is probably because of what’s known as a forecasting error: Like a drug, we think getting a fix will help, but it actually makes us feel worse, which comes down to an error in our ability to predict our own response. One study looked at how people feel after using Facebook and how they think they’ll feel going in. Like other studies suggested, the participants in this one almost always felt worse after using it, compared to people engaging in other activities. But a follow-up experiment showed that people generally believed that they’d feel better after using, not worse. Which of course turns out not to be the case at all, and sounds a lot like the pattern in other types of addiction.\n\nMore friends on social doesn’t mean you’re more social\nA couple of years ago, a study found that more friends on social media doesn’t necessarily mean you have a better social life—there seems to be a cap on the number of friends a person’s brain can handle, and it takes actual social interaction (not virtual) to keep up these friendships. So feeling like you’re being social by being on Facebook doesn’t work. Since loneliness is linked to myriad health and mental health problems (including early death), getting real social support is important. Virtual friend time doesn’t have the therapeutic effect as time with real friends.\n\nAll of this is not to say that there’s no benefit to social media—obviously it keeps us connected across great distances, and helps us find people we’d lost touch with years ago. But getting on social when you have some time to kill, or, worse, need an emotional lift, is very likely a bad idea. And studies have found that taking a break from Facebook helps boost psychological well-being. If you are feeling brave, try taking a little break, and see how it goes. And if you are going to keep using, then at least try to use in moderation.", "author"=>"Alice G. Walton", "created_at"=>"2019-02-05T02:19:59.041Z", "image"=>"https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>9}, "id"=>"6"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 9], ["updated_at", "2019-02-05 18:01:10.630100"], ["id", 6]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 13:01:16 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.76ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/articles/weqwe" for 127.0.0.1 at 2019-02-05 13:01:17 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/weqwe"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/api/articles/24" for ::1 at 2019-02-05 13:01:19 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"24"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.5ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 24]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 13:01:39 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.98ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 13:01:49 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.5ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-05 13:01:49 -0500
+Processing by Api::ArticlesController#create as */*
+  Parameters: {"article"=>{"title"=>"sad", "content"=>"sad", "author"=>"wdsd", "created_at"=>"", "image"=>"wdad"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (0.9ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "sad"], ["content", "sad"], ["created_at", "2019-02-05 18:01:49.644429"], ["updated_at", "2019-02-05 18:01:49.644429"], ["author", "wdsd"], ["image", "wdad"]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.68ms)
+Completed 200 OK in 13ms (Views: 1.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/articles/wdad" for 127.0.0.1 at 2019-02-05 13:01:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/wdad"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/articles" for ::1 at 2019-02-05 13:01:52 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.77ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/articles/26" for ::1 at 2019-02-05 13:01:52 -0500
+Processing by Api::ArticlesController#destroy as */*
+  Parameters: {"id"=>"26"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[36mArticle Destroy (0.6ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 26]]
+  ↳ app/controllers/api/articles_controller.rb:31
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:31
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 13:01:58 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.93ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/api/articles/1" for ::1 at 2019-02-05 13:08:15 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>1, "title"=>"Risk for developing more than one mental health disorder revealed", "content"=>"The risk of developing a second mental health disorder after an initial diagnosis is increased, according to new research led by Professor John McGrath from UQs Queensland Brain Institute and Aarhus University.\n\tProfessor McGrath and colleagues looked at Danish health data across a record 5.9 million individuals, providing the largest and most comprehensive study of comorbidity -- the development of two or more mental health disorders.\n\tThis long time frame enabled researchers to track a persons mental health for extended periods of time, and resulted in the startling finding that risk of a second mental health diagnosis remains high, even fifteen years after an initial diagnosis.\n\t\"In the first six months after initial diagnosis, the risk of a second mental health diagnosis is very high: so for example, people diagnosed with mood disorders like depression have a very high risk of being diagnosed with a neurotic disorder like anxiety in the first six months since diagnosis,\" Professor McGrath said.\n\t\"After the first year this risk drops substantially, but it then stabilises and remains 2 or 3 times higher than those without a prior disorder, even fifteen years after initial diagnosis.\"\n\t\"Importantly, the result was pervasive -- we found it across all pairs of disorders that we studied.\"\n\tThe findings also suggest that for some pairs of disorders, it did not matter which one came first -- there was an increased risk of developing the other disorders. For example, an initial diagnosis of depression was just as likely to be followed by a second diagnosis of anxiety, and vice versa.\n\tImportantly, people who were younger than 20 at the onset of their first mental disorder were significantly more at risk of developing a second disorderover the next 10-15 years, and this vulnerability was found across most pairs of disorders.\n\t\"We found that in younger people, mental health disorders were more \"pluripotent\", meaning an observed change or disruption in mental health was more flexible in the direction it manifested as a disorder,\" Professor McGrath said.\n\tNot only is the study the largest and most comprehensive in its field, but its innovative presentation of results has set a new standard for epidemiology (the study of health and disease data), said Professor McGrath.\n\t\"The paper is open access, with all data available and code free to download, and results presented in an interactive website with educational videos,\" he said.\n\t\"It is far more user-friendly than the traditional method of presenting results purely in an academic paper.\"\n\t\"We have provided a detailed, comprehensive atlas of the ways that mental disorders cluster together available openly for public use, and we hope that this informs better practice, better clinical care, and future research.\"\n\tThe next step for Professor McGrath and his colleagues is to extend the study to identify the risks between mental disorders and the subsequent onset of general medical conditions, such as epilepsy, migraine, heart attacks, and diabetes.\n\tThe paper was published in JAMA Psychiatry and supported by the Danish National Research Foundation.", "author"=>"https://www.sciencedaily.com/releases/2019/01/190117090515.htm", "created_at"=>"2019-02-05T00:17:49.607Z", "image"=>"https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>18}, "id"=>"1"}
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (1.6ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 18], ["updated_at", "2019-02-05 18:08:15.098971"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+Completed 200 OK in 10ms (Views: 1.1ms | ActiveRecord: 4.2ms)
+
+
+Started PUT "/api/articles/1" for ::1 at 2019-02-05 13:08:35 -0500
+Processing by Api::ArticlesController#update as */*
+  Parameters: {"article"=>{"id"=>1, "title"=>"Risk for developing more than one mental health disorder revealed", "content"=>"The risk of developing a second mental health disorder after an initial diagnosis is increased, according to new research led by Professor John McGrath from UQs Queensland Brain Institute and Aarhus University.\n\tProfessor McGrath and colleagues looked at Danish health data across a record 5.9 million individuals, providing the largest and most comprehensive study of comorbidity -- the development of two or more mental health disorders.\n\tThis long time frame enabled researchers to track a persons mental health for extended periods of time, and resulted in the startling finding that risk of a second mental health diagnosis remains high, even fifteen years after an initial diagnosis.\n\t\"In the first six months after initial diagnosis, the risk of a second mental health diagnosis is very high: so for example, people diagnosed with mood disorders like depression have a very high risk of being diagnosed with a neurotic disorder like anxiety in the first six months since diagnosis,\" Professor McGrath said.\n\t\"After the first year this risk drops substantially, but it then stabilises and remains 2 or 3 times higher than those without a prior disorder, even fifteen years after initial diagnosis.\"\n\t\"Importantly, the result was pervasive -- we found it across all pairs of disorders that we studied.\"\n\tThe findings also suggest that for some pairs of disorders, it did not matter which one came first -- there was an increased risk of developing the other disorders. For example, an initial diagnosis of depression was just as likely to be followed by a second diagnosis of anxiety, and vice versa.\n\tImportantly, people who were younger than 20 at the onset of their first mental disorder were significantly more at risk of developing a second disorderover the next 10-15 years, and this vulnerability was found across most pairs of disorders.\n\t\"We found that in younger people, mental health disorders were more \"pluripotent\", meaning an observed change or disruption in mental health was more flexible in the direction it manifested as a disorder,\" Professor McGrath said.\n\tNot only is the study the largest and most comprehensive in its field, but its innovative presentation of results has set a new standard for epidemiology (the study of health and disease data), said Professor McGrath.\n\t\"The paper is open access, with all data available and code free to download, and results presented in an interactive website with educational videos,\" he said.\n\t\"It is far more user-friendly than the traditional method of presenting results purely in an academic paper.\"\n\t\"We have provided a detailed, comprehensive atlas of the ways that mental disorders cluster together available openly for public use, and we hope that this informs better practice, better clinical care, and future research.\"\n\tThe next step for Professor McGrath and his colleagues is to extend the study to identify the risks between mental disorders and the subsequent onset of general medical conditions, such as epilepsy, migraine, heart attacks, and diabetes.\n\tThe paper was published in JAMA Psychiatry and supported by the Danish National Research Foundation.", "author"=>"https://www.sciencedaily.com/releases/2019/01/190117090515.htm", "created_at"=>"2019-02-05T00:17:49.607Z", "image"=>"https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>19}, "id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 19], ["updated_at", "2019-02-05 18:08:35.649496"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 13:10:48 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.41ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 13:13:11 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.42ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 13:13:40 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.38ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 13:14:03 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.68ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 13:14:24 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.72ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-05 13:15:26 -0500
+Processing by Api::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.96ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+

@@ -12,7 +12,7 @@ const allArticles = (state = initial_State, action) => {
 		case 'ADD_ARTICLE':
         	return { ...state, articles: state.articles.concat(action.payload)}
       	case 'LIKE_ARTICLE': 
-	     {const index = state.articles.filter(article => article.id !== action.payload.id);
+	     {const index = state.filter(article => article.id !== action.payload.id);
       		return [...state.slice(0, index), action.article, ...state.slice(index+1)]}
        case 'DELETE_ARTICLE':
         return {...state, articles: state.articles.filter(article => article.id !== action.payload.id)}

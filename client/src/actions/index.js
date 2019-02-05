@@ -16,7 +16,6 @@ export const login = (user) => {
   }
 
 
-
 export const likeArticle = (article) => {
   return { type: 'LIKE_ARTICLE', article };
 };
