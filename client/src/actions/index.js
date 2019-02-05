@@ -83,16 +83,17 @@ export const fetchArticles = () => {
     }
   }
 
-export const likesArticle = (id) => {
+ export const likesArticle = (article) => {
     let data = {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-      }
-    } 
+      },
+      body: JSON.stringify(article)
+    }
     return dispatch => {
-      fetch(`${ API_URL }/articles/${ id }`, data)
+      fetch(`${ API_URL }/articles/${article.id}`, data)
         .then(response => response.json())
         .then(article => dispatch({
           type: 'LIKE_ARTICLE',
@@ -101,5 +102,21 @@ export const likesArticle = (id) => {
         .catch(err => err)
     }
   }
+
+    // export const likesArticle = (article) => {
+//   return dispatch => {
+//     return fetch(`${API_URL}/articles/${article.id}`, {
+//       method: 'PUT',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({ article })
+//     })
+//     .then(res => res.json())
+//     .then(article => {
+//       dispatch(likeArticle(article));
+//     }).catch(err => console.log(err));
+//   };
+// };
 
 
