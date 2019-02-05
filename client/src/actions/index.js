@@ -23,74 +23,83 @@ export const likeArticle = (article) => {
 
 
 export const fetchArticles = () => {
-  return dispatch => {
-    return fetch(`${API_URL}/articles`)
-    .then(res => res.json())
-    .then(articles => {
-      dispatch({
+    let data = {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }
+    return dispatch => {
+      fetch(`${ API_URL }/articles`, data)
+        .then(response => response.json())
+        .then(articles => {
+          dispatch({
               type: 'FETCH_ARTICLES',
               payload: articles
-          });
-    }).catch(err => console.log(err))
-  };
-};
+          })
+        })
+        .catch(err => err)
+    }
+  }
 
 
-export const addArticle= (article, routerHistory) => {
-  return dispatch => {
-    return fetch(`${API_URL}/articles`, {
+  export const addArticle = (article) => {
+    let data = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ article })
-    })
-    .then(res => res.json())
-    .then(article => {
-      if (article.id) {
-          dispatch({
+      body: JSON.stringify(article)
+    }
+    return dispatch => {
+      fetch(`${ API_URL }/articles`, data)
+        .then(response => response.json())
+        .then(article => dispatch({
           type: 'ADD_ARTICLE',
           payload: article
-        });
-      } else {
-        const err = article.errors.join('\n\n')
-        alert(`${article.message}\n\n${err}`)
-      }
-    }).catch(err => console.log(err));
-  };
-};
+        }))
+        .catch(err => err)
+    }
+  }
 
-export const deleteArticle = (articleId, routerHistory) => {
-  return dispatch => {
-    return fetch(`${API_URL}/articles/${articleId}`, {
-      method: 'DELETE'
-    })
-    .then(res => {
-      if (res.status === 204) {
-        routerHistory.replace('/articles')
-        dispatch({
+  export const deleteArticle = (id) => {
+    let data = {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    } 
+    return dispatch => {
+      fetch(`${ API_URL }/articles/${ id }`, data)
+        .then(response => response.json())
+        .then(article => dispatch({
           type: 'DELETE_ARTICLE',
-          payload: articleId
-        });
-      }
-    }).catch(err =>  console.log(err));
-  };
-};
+          payload: article
+        }))
+        .catch(err => err)
+    }
+  }
 
-export const likesArticle = (article) => {
-  return dispatch => {
-    return fetch(`${API_URL}/articles/${article.id}`, {
+export const likesArticle = (id) => {
+    let data = {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ article })
-    })
-    .then(res => res.json())
-    .then(article => {
-      dispatch(likeArticle(article));
-    }).catch(err => console.log(err));
-  };
-};
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    } 
+    return dispatch => {
+      fetch(`${ API_URL }/articles/${ id }`, data)
+        .then(response => response.json())
+        .then(article => dispatch({
+          type: 'LIKE_ARTICLE',
+          payload: article
+        }))
+        .catch(err => err)
+    }
+  }
 
 
