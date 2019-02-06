@@ -30,6 +30,8 @@ class Articles extends Component {
 					<Article
 					title={article.title} 
 					author={article.author}
+					image={article.image}
+					created_at={article.created_at}
 					clicked={() => this.articleSelectedHandler(article.id)} />
 				</Link>
 				
@@ -40,13 +42,7 @@ class Articles extends Component {
 		
 		return(
 			<div>
-					<div>
-			            <img 
-			              className="image"
-			              src="http://www.wiltshire.gov.uk/images/1797/scaledcropped/651x366/resources/1797/health-and-wellbeing-image.jpg"
-			              alt="new"
-			              />
-              		</div>
+					
 					{renderArticles}				
 			</div>
 		);

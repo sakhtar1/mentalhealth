@@ -16,11 +16,6 @@ export const login = (user) => {
   }
 
 
-export const likeArticle = (article) => {
-  return { type: 'LIKE_ARTICLE', article };
-};
-
-
 
 export const fetchArticles = () => {
     let data = {
@@ -103,20 +98,6 @@ export const fetchArticles = () => {
     }
   }
 
-    // export const likesArticle = (article) => {
-//   return dispatch => {
-//     return fetch(`${API_URL}/articles/${article.id}`, {
-//       method: 'PUT',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify({ article })
-//     })
-//     .then(res => res.json())
-//     .then(article => {
-//       dispatch(likeArticle(article));
-//     }).catch(err => console.log(err));
-//   };
-// };
+
 
 

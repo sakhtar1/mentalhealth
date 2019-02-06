@@ -1,5 +1,5 @@
 import React from 'react';
-
+import moment from "moment";
 
 
 const article = (props) => (
@@ -10,7 +10,15 @@ const article = (props) => (
 	       </div>
 	       <br></br>
 	          <div onClick={props.clicked}>Author: {props.author}</div>
+	
+	        <div onClick={props.clicked}>Date: { moment(props.created_at).format('MMMM Do YYYY') }</div>
+	     	</div>
+	     	<br></br>
+	        <div>
+	        <img src={props.image} alt="image" />
 	        </div>
+	        <br></br>
+
 	  </div>
 
 );
