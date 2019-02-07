@@ -13,13 +13,15 @@ Mental Health is a project that focuses on user's mental health, resources they 
 To see the application in browser:
 
 (1) Clone this Repository
-(2) Run $ bundle install
-(3) Run $ rake db:migrate
-(4) Run $ rake db:seed
-(5) cd into $ cd client
-(6) Run $ npm install
-(7) cd back into the main folder run $ cd -
-(8) Run $ rake start
+(2) Run `$ bundle install`
+(3) Run `$ rake db:migrate`
+(4) Run `$ rake db:seed`
+(5) cd into `$ cd client`
+(6) Run `$ npm install`
+(7) cd back into the main folder run `$ cd -`
+(8) Run `$ rake start`
+
+
 
 Your application should be running on 'http://localhost:3000'
 
