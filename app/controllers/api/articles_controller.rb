@@ -23,7 +23,7 @@ module Api
 	        if @article.update(article_params)
 	            render json: @article
 	        else
-	            render json: {message: article.errors }, status: 400
+	            render json: {message: @article.errors }, status: 400
 	        end
     	end
 

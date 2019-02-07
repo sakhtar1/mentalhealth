@@ -12,6 +12,7 @@ class ArticleNew extends Component {
         author: '',
         created_at:'',
         image: '',
+        likes:'',
     }
 
     handleSubmit = event => {

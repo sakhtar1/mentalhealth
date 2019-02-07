@@ -6,6 +6,7 @@ import { fetchArticles, articleView } from '../actions/index';
 import Article from '../containers/Article'
 
 
+
 class Articles extends Component {
 
 	componentDidMount() {
@@ -30,8 +31,9 @@ class Articles extends Component {
 					<Article
 					title={article.title} 
 					author={article.author}
-					image={article.image}
 					created_at={article.created_at}
+					likes={article.likes}
+					image={article.image}
 					clicked={() => this.articleSelectedHandler(article.id)} />
 				</Link>
 				
