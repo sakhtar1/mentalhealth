@@ -11,7 +11,7 @@ Mental Health is a project that focuses on user's mental health, resources they 
 ## Install Directions
 
 To see the application in browser:
-
+```
 (1) Clone this Repository
 (2) Run `$ bundle install`
 (3) Run `$ rake db:migrate`
@@ -21,7 +21,7 @@ To see the application in browser:
 (7) cd back into the main folder run `$ cd -`
 (8) Run `$ rake start`
 
-
+```
 
 Your application should be running on 'http://localhost:3000'
 
