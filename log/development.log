@@ -22888,3 +22888,821 @@ Unpermitted parameter: :id
 Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 2.3ms)
 
 
+Started GET "/api/articles.json" for ::1 at 2019-02-07 18:06:49 -0500
+Processing by Api::ArticlesController#index as JSON
+  [1m[36mArticle Load (3.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.67ms)
+Completed 200 OK in 24ms (Views: 18.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:06:59 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.36ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:07:01 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>195}, "id"=>"1"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 195], ["updated_at", "2019-02-07 23:07:01.243379"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 21ms (Views: 1.4ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:07:04 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>196}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.6ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 196], ["updated_at", "2019-02-07 23:07:04.341619"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/main.f6bb05548d839a40f954.hot-update.js" for 127.0.0.1 at 2019-02-07 18:09:11 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sharminaakhtar/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/main.f6bb05548d839a40f954.hot-update.js"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/articles" for ::1 at 2019-02-07 18:09:11 -0500
+Started GET "/main.f6bb05548d839a40f954.hot-update.js" for 127.0.0.1 at 2019-02-07 18:09:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/main.f6bb05548d839a40f954.hot-update.js"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (2.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.15ms)
+Completed 200 OK in 62ms (Views: 57.8ms | ActiveRecord: 18.3ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:09:14 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>197}, "id"=>"1"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.9ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 197], ["updated_at", "2019-02-07 23:09:14.291715"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 23ms (Views: 1.6ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:09:17 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>198}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.6ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 198], ["updated_at", "2019-02-07 23:09:17.048703"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:09:21 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>199}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 199], ["updated_at", "2019-02-07 23:09:21.199538"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/articles.json" for ::1 at 2019-02-07 18:09:30 -0500
+Processing by Api::ArticlesController#index as JSON
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.8ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:09:35 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>200}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 200], ["updated_at", "2019-02-07 23:09:35.634686"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/articles.json" for ::1 at 2019-02-07 18:09:38 -0500
+Processing by Api::ArticlesController#index as JSON
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.85ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:12:47 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.24ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:13:00 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>201}, "id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.6ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 201], ["updated_at", "2019-02-07 23:13:00.905551"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.83ms)
+Completed 200 OK in 15ms (Views: 2.8ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:13:04 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>202}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 202], ["updated_at", "2019-02-07 23:13:04.437727"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (1.17ms)
+Completed 200 OK in 11ms (Views: 2.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/articles.json" for ::1 at 2019-02-07 18:13:07 -0500
+Processing by Api::ArticlesController#index as JSON
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.45ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:13:29 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>203}, "id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 203], ["updated_at", "2019-02-07 23:13:29.405287"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/articles.json" for ::1 at 2019-02-07 18:13:32 -0500
+Processing by Api::ArticlesController#index as JSON
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.16ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:13:36 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>204}, "id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 204], ["updated_at", "2019-02-07 23:13:36.761779"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+Completed 200 OK in 15ms (Views: 1.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/articles.json" for ::1 at 2019-02-07 18:13:40 -0500
+Processing by Api::ArticlesController#index as JSON
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.87ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:13:45 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.51ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:13:47 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>205}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.9ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 205], ["updated_at", "2019-02-07 23:13:47.539802"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.7ms)
+Completed 200 OK in 18ms (Views: 2.1ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/api/articles.json" for ::1 at 2019-02-07 18:13:52 -0500
+Processing by Api::ArticlesController#index as JSON
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.22ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:14:22 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.91ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:14:27 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>206}, "id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 206], ["updated_at", "2019-02-07 23:14:27.208123"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/articles.json" for ::1 at 2019-02-07 18:14:29 -0500
+Processing by Api::ArticlesController#index as JSON
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.54ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:14:34 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.11ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:14:39 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>207}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 207], ["updated_at", "2019-02-07 23:14:39.102300"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:14:43 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>208}, "id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 208], ["updated_at", "2019-02-07 23:14:43.364346"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.54ms)
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/articles.json" for ::1 at 2019-02-07 18:14:46 -0500
+Processing by Api::ArticlesController#index as JSON
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.92ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:15:51 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.9ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:15:55 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>209}, "id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.6ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 209], ["updated_at", "2019-02-07 23:15:55.998592"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 2.6ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:16:13 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>210}, "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 210], ["updated_at", "2019-02-07 23:16:13.914793"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:17:08 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.18ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:17:41 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.75ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 18:17:46 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>211}, "id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 211], ["updated_at", "2019-02-07 23:17:46.082553"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:18:39 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.41ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/%3Canonymous%3E" for 127.0.0.1 at 2019-02-07 18:18:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/%3Canonymous%3E"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/articles/%3Canonymous%3E" for 127.0.0.1 at 2019-02-07 18:18:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/%3Canonymous%3E"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/articles" for ::1 at 2019-02-07 18:19:28 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.75ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:21:06 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.5ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:21:26 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.51ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/articles" for ::1 at 2019-02-07 18:21:40 -0500
+Processing by Api::ArticlesController#create as JSON
+  Parameters: {"article"=>{"title"=>"sdsd", "content"=>"sdsd", "author"=>"sadas", "created_at"=>"", "image"=>"sads", "likes"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[36mArticle Create (1.9ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "created_at", "updated_at", "author", "image", "likes") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "sdsd"], ["content", "sdsd"], ["created_at", "2019-02-07 23:21:40.346080"], ["updated_at", "2019-02-07 23:21:40.346080"], ["author", "sadas"], ["image", "sads"], ["likes", nil]]
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:11
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.83ms)
+Completed 200 OK in 12ms (Views: 1.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:21:41 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.02ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sads" for 127.0.0.1 at 2019-02-07 18:21:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/sads"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/articles/sads" for 127.0.0.1 at 2019-02-07 18:21:45 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/sads"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PATCH "/api/articles/10" for ::1 at 2019-02-07 18:21:48 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>10, "title"=>"sdsd", "content"=>"sdsd", "author"=>"sadas", "created_at"=>"2019-02-07T23:21:40.346Z", "image"=>"sads", "likes"=>1}, "id"=>"10"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "created_at" = ?, "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["created_at", "2019-02-07 23:21:40.346000"], ["likes", 1], ["updated_at", "2019-02-07 23:21:48.865930"], ["id", 10]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 18:22:21 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.24ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sads" for 127.0.0.1 at 2019-02-07 18:22:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/sads"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/articles/sads" for 127.0.0.1 at 2019-02-07 18:22:25 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/sads"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PATCH "/api/articles/10" for ::1 at 2019-02-07 18:22:26 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>10, "title"=>"sdsd", "content"=>"sdsd", "author"=>"sadas", "created_at"=>"2019-02-07T23:21:40.346Z", "image"=>"sads", "likes"=>2}, "id"=>"10"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 2], ["updated_at", "2019-02-07 23:22:26.769042"], ["id", 10]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/api/articles/10" for ::1 at 2019-02-07 18:22:26 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>10, "title"=>"sdsd", "content"=>"sdsd", "author"=>"sadas", "created_at"=>"2019-02-07T23:21:40.346Z", "image"=>"sads", "likes"=>3}, "id"=>"10"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 3], ["updated_at", "2019-02-07 23:22:26.973732"], ["id", 10]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/api/articles/10" for ::1 at 2019-02-07 18:22:27 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>10, "title"=>"sdsd", "content"=>"sdsd", "author"=>"sadas", "created_at"=>"2019-02-07T23:21:40.346Z", "image"=>"sads", "likes"=>4}, "id"=>"10"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 4], ["updated_at", "2019-02-07 23:22:27.131193"], ["id", 10]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/api/articles/10" for ::1 at 2019-02-07 18:22:27 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>10, "title"=>"sdsd", "content"=>"sdsd", "author"=>"sadas", "created_at"=>"2019-02-07T23:21:40.346Z", "image"=>"sads", "likes"=>5}, "id"=>"10"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.7ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 5], ["updated_at", "2019-02-07 23:22:27.387293"], ["id", 10]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 2.6ms)
+
+
+Started PATCH "/api/articles/10" for ::1 at 2019-02-07 18:22:27 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>10, "title"=>"sdsd", "content"=>"sdsd", "author"=>"sadas", "created_at"=>"2019-02-07T23:21:40.346Z", "image"=>"sads", "likes"=>6}, "id"=>"10"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 6], ["updated_at", "2019-02-07 23:22:27.585187"], ["id", 10]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 8ms (Views: 1.1ms | ActiveRecord: 2.6ms)
+
+
+Started PATCH "/api/articles/10" for ::1 at 2019-02-07 18:22:27 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>10, "title"=>"sdsd", "content"=>"sdsd", "author"=>"sadas", "created_at"=>"2019-02-07T23:21:40.346Z", "image"=>"sads", "likes"=>7}, "id"=>"10"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 7], ["updated_at", "2019-02-07 23:22:27.766946"], ["id", 10]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 2.4ms)
+
+

@@ -18,8 +18,6 @@ class ArticlesPage extends Component {
         let currentArticle = this.props.article[0]
        currentArticle.likes += 1
         console.log(this.props.likesArticle(currentArticle));
-       //this.props.likesArticle(this.props.article[0])
-
    };
 
     render(){
@@ -54,7 +52,7 @@ class ArticlesPage extends Component {
                 <div>
                     <button className="btn-primary" value={article[0].id} onClick={this.handleClickLike.bind(this)}>Like!</button>
                       <div style={{display: 'inline', marginLeft: 10}}>
-                        {currentArticle.likes += 1}{ this.props.likesArticle(currentArticle)} {likekey}
+                        {article[0].likes} {likekey}
                         </div>
                 </div>
                 <br></br>

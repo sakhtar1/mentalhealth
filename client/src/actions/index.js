@@ -62,7 +62,7 @@ export const fetchArticles = () => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(article)
+      body: JSON.stringify({article})
     }
     return dispatch => {
       fetch(`${ API_URL }/articles`, data)

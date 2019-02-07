@@ -33,12 +33,12 @@ li a:hover {
   background-color: #4CAF50;
 }
 
-
+/*
 .active {
   background-color: #4CAF50;
 
 }
-
+*/
 .sticky {
   position: fixed;
   top: 0;
