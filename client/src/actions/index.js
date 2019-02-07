@@ -8,6 +8,14 @@ export const login = (user) => {
   }
 };
 
+export const signup = (user) => {
+  return {
+    type: 'SIGNUP',
+    user
+
+  }
+};
+
  export const articleView = (payload) => {
     return {
       type: 'VIEW_ARTICLE',
@@ -90,6 +98,7 @@ export const fetchArticles = () => {
    let data = {
         method: 'PATCH',
         headers: {
+          'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({article})

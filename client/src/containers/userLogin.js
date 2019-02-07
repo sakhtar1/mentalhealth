@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { login } from '../actions/index';
 
 class Login extends Component {
@@ -11,6 +12,8 @@ class Login extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.login()
+        alert("Logged in!")
+        this.props.history.push('/articles') 
     }
 
     handleChange = event => {
@@ -48,8 +51,20 @@ class Login extends Component {
                         <p className="control">
                           <button className="button is-success">
                             Login
-                          </button>
-                        </p>
+                          </button></p>
+                          <br></br>
+                          <div>     
+                                Don't have an account?
+                                <br></br>
+                                <br></br>
+                              <p>
+                                <Link to={"/signup"}>
+                                  <button> Sign Up </button>
+                                </Link>
+                              </p>
+                              
+                            </div>
+                       
                       </div>
                   </form>
               </div>
