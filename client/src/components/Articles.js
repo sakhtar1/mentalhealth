@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { fetchArticles, articleView } from '../actions/index';
+import { withRouter } from 'react-router-dom';
 import Article from '../containers/Article'
 
 
@@ -56,4 +57,4 @@ const mapStateToProps = state => {
 	}
   }
 
-export default connect(mapStateToProps, { fetchArticles, articleView })(Articles);
+export default withRouter(connect(mapStateToProps, { fetchArticles, articleView })(Articles));

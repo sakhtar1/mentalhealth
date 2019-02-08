@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteArticle, likesArticle } from '../actions/index';
+import { deleteArticle, likesArticle, articleView } from '../actions/index';
+import { withRouter } from 'react-router-dom';
 import moment from "moment";
 
 
 
 class ArticlesPage extends Component {
+
 
     handleClickDelete = (event) => {
         event.preventDefault()
@@ -17,7 +19,8 @@ class ArticlesPage extends Component {
         event.preventDefault()
         let currentArticle = this.props.article[0]
        currentArticle.likes += 1
-        console.log(this.props.likesArticle(currentArticle));
+        this.props.likesArticle(currentArticle);
+
    };
 
     render(){
@@ -73,5 +76,5 @@ const mapStateToProps = state => {
  
     };
 }
-export default connect(mapStateToProps, { deleteArticle, likesArticle })(ArticlesPage);
+export default withRouter(connect(mapStateToProps, { deleteArticle, likesArticle, articleView })(ArticlesPage));
 
