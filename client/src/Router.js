@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Health from './components/Health'
-import Articles from './components/Articles'
+import Articles from './containers/Articles'
 import Homepage from './components/Homepage'
 import ArticleNew from './containers/ArticleNew';
 import Login from './containers/userLogin';

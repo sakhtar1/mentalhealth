@@ -1,10 +1,9 @@
-
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { fetchArticles, articleView } from '../actions/index';
 import { withRouter } from 'react-router-dom';
-import Article from '../containers/Article'
+import Article from '../components/Article'
 
 
 
@@ -16,8 +15,8 @@ class Articles extends Component {
 
 	articleSelectedHandler = (id) => {
 		const { articles } = this.props;
-		let filter = articles.filter(article => article.id === id)
-		this.props.articleView(filter);
+		let filterView = articles.filter(article => article.id === id)
+		this.props.articleView(filterView);
 		this.props.history.push({pathname:'/articles/' + id});
 	}
 

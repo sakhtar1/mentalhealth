@@ -25598,3 +25598,92 @@ Processing by Api::ArticlesController#index as JSON
 Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/api/articles.json" for ::1 at 2019-02-07 21:18:31 -0500
+Processing by Api::ArticlesController#index as JSON
+  [1m[36mArticle Load (2.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.31ms)
+Completed 200 OK in 28ms (Views: 22.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 21:24:27 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sharminaakhtar/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.56ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 21:25:04 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.83ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 21:25:11 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.64ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 21:25:23 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.21ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 21:26:21 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.29ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/api/articles/1" for ::1 at 2019-02-07 21:26:28 -0500
+Processing by Api::ArticlesController#update as JSON
+  Parameters: {"article"=>{"id"=>1, "title"=>"5 Natural Depression Treatments", "content"=>"Being depressed can make you feel helpless. You are not. Along with therapy and sometimes medication, there is a lot you can do on your own to fight back. Changing your behavior -- your physical activity, lifestyle, and even your way of thinking -- are all natural depression treatments.\n\tThese tips can help you feel better -- starting right now. 1. Get in a routine. If you’re depressed, you need a routine, says Ian Cook, MD. He is a psychiatrist and director of the Depression Research and Clinic Program at UCLA.\n\tDepression can strip away the structure from your life. One day melts into the next. Setting a gentle daily schedule can help you get back on track.\n\t2.Set goals. When you are depressed, you may feel like you cannot accomplish anything. That makes you feel worse about yourself. To push back, set daily goals for yourself.\n\t\"Start very small,\" Cook says. \"Make your goal something that you can succeed at, like doing the dishes every other day.\"\n\tYOU MIGHT LIKE\n\tAs you start to feel better, you can add more challenging daily goals.\n\t3. Exercise. It temporarily boosts feel-good chemicals called endorphins. It may also have long-term benefits for people with depression. Regular exercise seems to encourage the brain to rewire itself in positive ways, Cook says.\n\tHow much exercise do you need? You don’t need to run marathons to get a benefit. Just walking a few times a week can help.\n\t4. Eat healthy. There is no magic diet that fixes depression. It is a good idea to watch what you eat, though. If depression tends to make you overeat, getting in control of your eating will help you feel better.\n\tAlthough nothing is definitive, Cook says there is evidence that foods with omega-3 fatty acids (such as salmon and tuna) and folic acid (such as spinach and avocado) could help ease depression.\n\t5. Get enough sleep. Depression can make it hard to get enough shut-eye, and too little sleep can make depression worse.\n\tWhat can you do? Start by making some changes to your lifestyle. Go to bed and get up at the same time every day. Try not to nap. Take all the distractions out of your bedroom -- no computer and no TV. In time, you may find your sleep improves.", "author"=>"R. Morgan Griffin", "created_at"=>"2019-02-06T05:06:58.078Z", "image"=>"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500", "likes"=>243}, "id"=>"1"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/articles_controller.rb:41
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[36mArticle Update (0.5ms)[0m  [1m[33mUPDATE "articles" SET "likes" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["likes", 243], ["updated_at", "2019-02-08 02:26:28.890095"], ["id", 1]]
+  ↳ app/controllers/api/articles_controller.rb:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/articles_controller.rb:23
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 22ms (Views: 1.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 21:26:30 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.18ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/articles" for ::1 at 2019-02-07 21:26:38 -0500
+Processing by Api::ArticlesController#index as JSON
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/api/articles_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.01ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
