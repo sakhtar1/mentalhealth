@@ -108,6 +108,7 @@ export const fetchArticles = () => {
         fetch(`${ API_URL }/articles/${article.id}`, data)
           .then(res => res.json())
           .then(article => {
+    
           dispatch(likeArticle(article));
     }).catch(err => console.log(err));
   }

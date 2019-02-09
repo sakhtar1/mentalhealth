@@ -5,9 +5,11 @@ import articleView from './articleView';
 import articleLike from './articleLike';
 
 
-export default combineReducers({
+const rootReducer = combineReducers({
 	allArticles,
 	allUsers,
 	articleView,
 	articleLike
 });
+
+export default rootReducer

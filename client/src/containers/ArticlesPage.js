@@ -27,7 +27,7 @@ class ArticlesPage extends Component {
     render(){
             const { article } = this.props;
         
-            let likekey = article.likes === 1 ? 'like' : 'likes';
+            let  likekey  = article.likes === 1 ? 'like' : 'likes';
 
         return(
             <div className="articleshow">

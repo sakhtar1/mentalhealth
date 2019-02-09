@@ -18,6 +18,7 @@ debugger
   debugger
     default:
       return state
+      debugger
   }
 }
 
