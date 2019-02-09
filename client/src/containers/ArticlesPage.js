@@ -11,13 +11,14 @@ class ArticlesPage extends Component {
 
     handleClickDelete = (event) => {
         event.preventDefault()
-        this.props.deleteArticle(this.props.article[0].id);
+        this.props.deleteArticle(this.props.article.id);
+        alert("Your article has been deleted!")
         this.props.history.push({pathname:'/articles/'});
     }
 
     handleClickLike= (event) => {
         event.preventDefault()
-        let currentArticle = this.props.article[0]
+        let currentArticle = this.props.article
        currentArticle.likes += 1
         this.props.likesArticle(currentArticle);
 
@@ -25,37 +26,36 @@ class ArticlesPage extends Component {
 
     render(){
             const { article } = this.props;
-            let currentArticle = this.props.article[0]
-            
-                
-            let likekey = article[0].likes === 0 ? 'like' : 'likes';
+        
+            let likekey = article.likes === 1 ? 'like' : 'likes';
 
         return(
             <div className="articleshow">
-                <h1 className="title"> {article[0].title}</h1>
+
+                <h1 className="title"> {article.title}</h1>
                  <div>
                   <img 
                     className="image"
-                    src={article[0].image}
-                    alt={article[0].title}
+                    src={article.image}
+                    alt={article.title}
 
                     />
                 </div>
 
                 <br></br>
                 <div>
-                    <p className = "content"> {article[0].content}</p>
+                    <p className = "content"> {article.content}</p>
                 </div>
-                <p> Author: {article[0].author}</p>
+                <p> Author: {article.author}</p>
                 <br></br>
                 <div>
-                    <p> Date: { moment(article[0].created_at).format('MMMM Do YYYY') }</p>
+                    <p> Date: { moment(article.created_at).format('MMMM Do YYYY') }</p>
                 </div>
                 <br></br>
                 <div>
-                    <button className="btn-primary" value={article[0].id} onClick={this.handleClickLike.bind(this)}>Like!</button>
+                    <input type='button' className= 'btn-primary' value='Like!' onClick={this.handleClickLike.bind(this) } />
                       <div style={{display: 'inline', marginLeft: 10}}>
-                        {article[0].likes} {likekey}
+                        {article.likes} {likekey}
                         </div>
                 </div>
                 <br></br>
@@ -72,7 +72,7 @@ class ArticlesPage extends Component {
 };
 const mapStateToProps = state => {
     return{
-       article: state.articleView[0]
+       article: state.articleView[0][0]
  
     };
 }

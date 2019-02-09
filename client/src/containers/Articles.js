@@ -13,7 +13,7 @@ class Articles extends Component {
 		this.props.fetchArticles()
 	}
 
-	articleSelectedHandler = (id) => {
+	selectArticle = (id) => {
 		const { articles } = this.props;
 		let filterView = articles.filter(article => article.id === id)
 		this.props.articleView(filterView);
@@ -34,7 +34,7 @@ class Articles extends Component {
 					created_at={article.created_at}
 					likes={article.likes}
 					image={article.image}
-					clicked={() => this.articleSelectedHandler(article.id)} />
+					clicked={() => this.selectArticle(article.id)} />
 				</Link>
 				
 					

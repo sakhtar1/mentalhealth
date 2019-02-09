@@ -17,7 +17,7 @@ const article = (props) => (
 	     	</div>
 	     	<br></br>
 	        <div onClick={props.clicked}>
-	        <img src={props.image} />
+	        <img src={props.image} alt={props.title}/>
 	        </div>
 	        <br></br>
 

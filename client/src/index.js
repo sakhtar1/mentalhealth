@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as serviceWorker from './serviceWorker';
+//import * as serviceWorker from './serviceWorker';
+import Bulma from 'bulma'
 import { BrowserRouter } from 'react-router-dom';
 import rootReducer from './reducers/rootReducer';
 import { createStore, applyMiddleware } from 'redux';

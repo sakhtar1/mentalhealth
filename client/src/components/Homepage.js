@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {GoogleApiWrapper} from 'google-maps-react'
 import { GoogleComponent } from 'react-google-location' 
 import GoogleMapReact from 'google-map-react';
-import Zip from 'react-zipcode'
-import Bulma from 'bulma'
+//import Zip from 'react-zipcode'
 import 'bootstrap/dist/css/bootstrap.css';
 
 

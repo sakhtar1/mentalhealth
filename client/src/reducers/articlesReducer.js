@@ -12,9 +12,7 @@ const allArticles = (state = initial_State, action) => {
 		case 'ADD_ARTICLE':
         	return { ...state, articles: state.articles.concat(action.payload)}
         case 'DELETE_ARTICLE':
-        	debugger
         	return {...state, articles: state.articles.filter(article => article.id !== action.payload.id)}
-        	debugger
 		default:
 			return state;
 	}
