@@ -24,6 +24,7 @@ class Articles extends Component {
 		
 		let { articles } = this.props
 		let renderArticles;
+		
 		if (this.props && this.props.articles.length !== 0){
 		renderArticles = articles.map(article => {
 			return(
@@ -32,7 +33,7 @@ class Articles extends Component {
 					title={article.title} 
 					author={article.author}
 					created_at={article.created_at}
-					likes={article.likes}
+					likes={article.likes} 
 					image={article.image}
 					clicked={() => this.selectArticle(article.id)} />
 				</Link>

@@ -11,7 +11,7 @@ const article = (props) => (
 	       </div>
 	          <div onClick={props.clicked}>Author: {props.author}</div>
 	          <br></br>
-	          <div onClick={props.clicked}><p>{props.likes} Likes</p></div>
+	          <div onClick={props.clicked}><p>{props.likes} {props.likes === 1 ? 'Like' : 'Likes'} </p></div>
 		
 	        <div onClick={props.clicked}>Date: { moment(props.created_at).format('MMMM Do YYYY') }</div>
 	     	</div>

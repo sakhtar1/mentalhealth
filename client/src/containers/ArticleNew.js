@@ -32,7 +32,7 @@ class ArticleNew extends Component {
     render() {
         return(
             <div className="article-new">
-                <h1 className="title">Add an Article</h1>
+                <h1 className="title">Blog Post</h1>
                
                 <form onSubmit={this.handleSubmit}>
                     <div className="field">
