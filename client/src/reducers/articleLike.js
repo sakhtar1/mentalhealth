@@ -9,7 +9,7 @@ const articleLike = (state = [], action) => {
         articles = [ action.article ]
       }
       debugger
-      return articles 
+      return { articles } 
       debugger
     default:
       return state

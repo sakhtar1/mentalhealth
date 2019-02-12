@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteArticle, likesArticle, articleView } from '../actions/index';
-import { withRouter } from 'react-router-dom';
 import moment from "moment";
 
 
@@ -76,5 +75,5 @@ const mapStateToProps = state => {
  
     };
 }
-export default withRouter(connect(mapStateToProps, { deleteArticle, likesArticle, articleView })(ArticlesPage));
+export default connect(mapStateToProps, { deleteArticle, likesArticle, articleView })(ArticlesPage);
 
