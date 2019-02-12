@@ -6,7 +6,7 @@ Mental Health is a project that focuses on user's mental health, resources they 
 
  Users can also create an account and write their own articles and experiences. 
 
- Mental Health is a project that I built with React and Redux in the Front-end with a Rails API. This repository is the front-end and back-end of my application. The application was created using Create-React-App, and uses ES6 standards.
+ Mental Health is a project that I built with React and Redux in the Front-end with a Rails API. This repository is the front-end and back-end of my application. The applications front-end was created using Create-React-App, back-end was created using Rails API, and it uses ES6 standards.
 
 ## Install Directions
 
