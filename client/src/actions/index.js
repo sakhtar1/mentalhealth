@@ -96,7 +96,7 @@ export const fetchArticles = () => {
   }
 
    export const likesArticle = (article) => {
-    debugger
+
    let data = {
         method: 'PATCH',
         headers: {
@@ -105,14 +105,14 @@ export const fetchArticles = () => {
         },
         body: JSON.stringify({article})
       }
-      debugger
+     
       return dispatch => {
         fetch(`${ API_URL }/articles/${article.id}`, data)
           .then(res => res.json())
           .then(article => {
-          debugger
+          
           dispatch(likeArticle(article));
-          debugger
+          
     }).catch(err => console.log(err));
   }
 }

@@ -6,8 +6,6 @@ import moment from "moment";
 
 
 class ArticlesPage extends Component {
-
-
     handleClickDelete = (event) => {
         event.preventDefault()
         this.props.deleteArticle(this.props.article.id);
@@ -24,7 +22,7 @@ class ArticlesPage extends Component {
    };
 
     render(){
-            const { article } = this.props;
+            const { article, likes } = this.props;
         
             let  likekey  = article.likes === 1 ? 'like' : 'likes';
 
@@ -54,8 +52,8 @@ class ArticlesPage extends Component {
                 <div>
                     <input type='button' className= 'btn-primary' value='Like!' onClick={this.handleClickLike.bind(this) } />
                       <div style={{display: 'inline', marginLeft: 10}}>
-                        {article.likes} {likekey}
-                        </div>
+                        {likes} {likekey}
+                      </div>
                 </div>
                 <br></br>
                 <div className="field">
@@ -69,11 +67,13 @@ class ArticlesPage extends Component {
         )
     }
 };
+
 const mapStateToProps = state => {
-    return{
-       article: state.articleView[0][0]
- 
+    return {
+       article: state.articleView[0][0],
+       likes: state.articleView[0][0].likes
     };
 }
+
 export default connect(mapStateToProps, { deleteArticle, likesArticle, articleView })(ArticlesPage);
 
