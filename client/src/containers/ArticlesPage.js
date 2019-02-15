@@ -9,7 +9,7 @@ class ArticlesPage extends Component {
     handleClickDelete = (event) => {
         event.preventDefault()
         this.props.deleteArticle(this.props.article.id);
-        alert("Your article has been deleted!")
+        alert("Your article has been removed!")
         this.props.history.push({pathname:'/articles/'});
     }
 
@@ -59,7 +59,7 @@ class ArticlesPage extends Component {
                 <div className="field">
                         <p className="control">
                           <button className="button is-success" onClick={this.handleClickDelete}>
-                            Delete
+                            Remove Article
                           </button>
                         </p>
                       </div>
