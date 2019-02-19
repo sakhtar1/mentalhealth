@@ -54,7 +54,7 @@ class ArticleNew extends Component {
                           </div>
                         </div>
                       <div className="field">
-                          <label className="label">Image Link</label>
+                          <label className="label">Image</label>
                           <div className="control">
                             <input className="input" type="text" placeholder="Paste URL" ref="image" value={this.state.image} onChange={(event) => this.setState({image: event.target.value})}/>
                           </div>
