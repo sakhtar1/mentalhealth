@@ -66,8 +66,7 @@ class ArticleNew extends Component {
                           </div>
                     </div>
                       <div><button className='cancelLink'
-                      onClick={() => this.props.history.push('/articles')}
-                    >
+                      onClick={() => this.props.history.push('/articles')}>
                     Cancel
                   </button>
                   </div>

@@ -11,6 +11,8 @@ class ArticleEdit extends Component {
         content: '',
         author: '',
         created_at:'',
+        image: '',
+        likes:'',
     }
 
     handleSubmit = event => {

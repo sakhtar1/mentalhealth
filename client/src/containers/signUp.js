@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import ReactSignupLoginComponent from 'react-signup-login-component';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { signup } from '../actions/index';
@@ -72,9 +71,6 @@ class Signup extends Component {
                               </Link>
                             </p>
                             </div>
-
-                              
-
                       </div>
                   </form>
               </div>
@@ -84,32 +80,3 @@ class Signup extends Component {
 }
 
 export default connect(null, {signup})(Signup);
- 
-// const LoginPage = (props) => {
-//     const signupWasClickedCallback = (data) => {
-//       console.log(data);
-//       alert('Signup callback, see log on the console to see the data.');
-//     };
-//     const loginWasClickedCallback = (data) => {
-//       console.log(data);
-//       alert('Login callback, see log on the console to see the data.');
-//     };
-//     const recoverPasswordWasClickedCallback = (data) => {
-//       console.log(data);
-//       alert('Recover password callback, see log on the console to see the data.');
-//     };
-//     return (
-//         <div>
-//         <br></br>
-//         <br></br>
-//             <ReactSignupLoginComponent
-//                 title="Mental Health"
-//                 handleSignup={signupWasClickedCallback}
-//                 handleLogin={loginWasClickedCallback}
-//                 handleRecoverPassword={recoverPasswordWasClickedCallback}
-//             />
-//         </div>
-//     );
-// };
- 
-// export default LoginPage;

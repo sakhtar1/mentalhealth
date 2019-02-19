@@ -9,7 +9,7 @@ const articleLike = (state = [], action) => {
       } else {
         articles = [ action.article ]
       }
-
+      
       return articles 
     default:
       return state

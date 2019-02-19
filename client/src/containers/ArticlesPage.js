@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteArticle, likesArticle, articleView } from '../actions/index';
+import { deleteArticle, likesArticle } from '../actions/index';
 import moment from "moment";
 
 
 
 class ArticlesPage extends Component {
+    
     handleClickDelete = (event) => {
         event.preventDefault()
         this.props.deleteArticle(this.props.article.id);
@@ -75,5 +76,5 @@ const mapStateToProps = state => {
     };
 }
 
-export default connect(mapStateToProps, { deleteArticle, likesArticle, articleView })(ArticlesPage);
+export default connect(mapStateToProps, { deleteArticle, likesArticle })(ArticlesPage);
 

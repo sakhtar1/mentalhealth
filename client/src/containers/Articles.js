@@ -26,7 +26,7 @@ class Articles extends Component {
 		let renderArticles;
 		
 		if (this.props && this.props.articles.length !== 0){
-		renderArticles = articles.map(article => {
+			renderArticles = articles.map(article => {
 			return(
 				<Link to={"/articles/" + article.id} key={article.id} >
 					<Article
@@ -37,16 +37,13 @@ class Articles extends Component {
 					image={article.image}
 					clicked={() => this.selectArticle(article.id)} />
 				</Link>
-				
-					
-				
+			
 			);
 		})};
 		
 		return(
-			<div>
-					
-					{renderArticles}				
+			<div>	
+				{renderArticles}				
 			</div>
 		);
 	}

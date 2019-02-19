@@ -10,12 +10,13 @@ const Footer = (props) => {
 	        </p>
 	      </div>
 	       <div className='has-text-centered'>
-		       <p>
+		       
 		          This information is not designed to replace a physician's 
 		          independent judgment about the appropriateness or risks of a procedure 
 		          for a given patient. Always consult your doctor about your medical conditions. 
 		          Mental Health does not provide medical advice, diagnosis or treatment. 
-		      	  Use of this website is conditional upon your acceptance of our User Agreement.</p>
+		      	  Use of this website is conditional upon your acceptance of our User Agreement.
+		      	
 	      </div>
 	    </footer>
 	   </div>
