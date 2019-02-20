@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Health = () => {
+const Health = (props) => {
   return (
     <div className="health">
      	<div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateArticle } from '../actions/index';
+import { updateArticle } from '../actions/articleActions';
 import uuid from 'uuid';
 
 

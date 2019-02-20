@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addArticle } from '../actions/index';
+import { addArticle } from '../actions/articleActions';
 
 
 

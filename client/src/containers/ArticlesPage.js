@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteArticle, likesArticle } from '../actions/index';
+import { deleteArticle, likesArticle } from '../actions/articleActions';
 import moment from "moment";
 
 

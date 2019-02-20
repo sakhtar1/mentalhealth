@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { login } from '../actions/index';
+import { login } from '../actions/userActions';
 
 class Login extends Component {
     state = {

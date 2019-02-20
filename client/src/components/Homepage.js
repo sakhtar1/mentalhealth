@@ -5,7 +5,7 @@ import GoogleMapReact from 'google-map-react';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-const Homepage = () => {
+const Homepage = (props) => {
 
 		  return (
         <div>
