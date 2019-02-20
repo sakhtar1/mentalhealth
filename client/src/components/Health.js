@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Health = () => {
+export const Health = () => {
   return (
     <div className="health">
      	<div>
@@ -131,5 +131,3 @@ const Health = () => {
     </div>
   );
 };
-
-export default Health;

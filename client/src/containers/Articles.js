@@ -36,7 +36,9 @@ class Articles extends Component {
 					likes={article.likes} 
 					image={article.image}
 					clicked={() => this.selectArticle(article.id)} />
+					<hr/>
 				</Link>
+
 			
 			);
 		})};
