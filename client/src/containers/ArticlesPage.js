@@ -6,6 +6,10 @@ import moment from "moment";
 
 
 class ArticlesPage extends Component {
+
+     state = {
+        likes: 'Like!',
+    }
     
     handleClickDelete = (event) => {
         event.preventDefault()
@@ -19,7 +23,7 @@ class ArticlesPage extends Component {
         let currentArticle = this.props.article
        currentArticle.likes += 1
         this.props.likesArticle(currentArticle);
-
+        this.setState ({ likes: 'Liked!' })
    };
 
     render(){
@@ -51,7 +55,7 @@ class ArticlesPage extends Component {
                 </div>
                 <br></br>
                 <div>
-                    <input type='button' className= 'btn-primary' value='Like!' onClick={this.handleClickLike.bind(this) } />
+                    <input type='button' className= 'btn-primary' value={this.state.likes} onChange={(event) => this.setState({likes: event.target.value})} onClick={this.handleClickLike.bind(this) } />
                       <div style={{display: 'inline', marginLeft: 10}}>
                         {likes} {likekey}
                       </div>
