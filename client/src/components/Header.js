@@ -11,7 +11,7 @@ const Navigation = (props) => {
           <li><NavLink to='/'>Mental Health</NavLink></li>
           <li><NavLink to='/health'>Health</NavLink></li>
           <li><NavLink to='/articles'>Articles/News</NavLink></li>
-          <li><NavLink to={{pathname: '/new-article'}}>Add Article</NavLink></li>
+          <li><NavLink to='/new-article'>Add Article</NavLink></li>
           <li className="loginnav"><NavLink to='/login'>Login</NavLink></li>   
         </ul>
       </nav>

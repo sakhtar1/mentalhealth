@@ -8,7 +8,7 @@ import moment from "moment";
 class ArticlesPage extends Component {
 
      state = {
-        likes: 'Like!',
+        buttonLike: 'Like!',
     }
     
     handleClickDelete = (event) => {
@@ -18,13 +18,16 @@ class ArticlesPage extends Component {
         this.props.history.push({pathname:'/articles/'});
     }
 
-    handleClickLike= (event) => {
+    handleClickLike = (event) => {
         event.preventDefault()
         let currentArticle = this.props.article
-       currentArticle.likes += 1
+        currentArticle.likes += 1
         this.props.likesArticle(currentArticle);
-        this.setState ({ likes: 'Liked!' })
+        this.setState ({ buttonLike: 'Liked!' })
    };
+
+
+
 
     render(){
             const { article, likes } = this.props;
@@ -55,7 +58,10 @@ class ArticlesPage extends Component {
                 </div>
                 <br></br>
                 <div>
-                    <input type='button' className= 'btn-primary' value={this.state.likes} onChange={(event) => this.setState({likes: event.target.value})} onClick={this.handleClickLike.bind(this) } />
+                    <input type='button' className= 'btn-primary' 
+                    value={this.state.buttonLike} 
+                    onChange={(event) => this.setState({buttonLike: event.target.value})} 
+                    onClick={this.handleClickLike.bind(this) } />
                       <div style={{display: 'inline', marginLeft: 10}}>
                         {likes} {likekey}
                       </div>
