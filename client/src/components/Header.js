@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-export const Navigation = (props) => {
+const Navigation = (props) => {
 
   return(
     <div className="header" id="toprow">
@@ -19,5 +19,5 @@ export const Navigation = (props) => {
   )};
 
 
- 
+  export default Navigation
 

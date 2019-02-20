@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Health = () => {
+const Health = () => {
   return (
     <div className="health">
      	<div>
@@ -131,3 +131,5 @@ export const Health = () => {
     </div>
   );
 };
+
+export default Health;
