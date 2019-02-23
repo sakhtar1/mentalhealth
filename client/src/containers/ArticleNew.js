@@ -12,13 +12,14 @@ class ArticleNew extends Component {
         author: '',
         created_at:'',
         image: '',
-        likes:'',
     }
 
     handleSubmit = event => {
         event.preventDefault();
+        console.log('A')
         this.props.addArticle(this.state);
-        alert("Your article has been created!")
+        console.log('B')
+        //alert("Your article has been created!")
         this.props.history.push('/articles') 
         }
 
