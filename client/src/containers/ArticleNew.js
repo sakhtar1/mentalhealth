@@ -21,6 +21,7 @@ class ArticleNew extends Component {
         console.log('B')
         //alert("Your article has been created!")
         this.props.history.push('/articles') 
+
         }
 
 

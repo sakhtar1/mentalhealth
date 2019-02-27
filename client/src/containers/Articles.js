@@ -13,20 +13,33 @@ class Articles extends Component {
 		this.props.fetchArticles()
 	}
 
+	clickToSort = () => {
+		this.props.articles.sort(function (a, b) {
+			 if (b.created_at < a.created_at) {
+				    return -1;
+				  }
+			if (b.created_at > a.created_at) {
+				    return 1;
+				  }
+			return 0;
+			});
+		console.log(this.props.articles)
+		this.props.history.push({pathname:'/articles/'});
+
+	}
+
 	selectArticle = (id) => {
-		const { articles } = this.props;
-		let filterView = articles.filter(article => article.id === id)
+		let filterView = this.props.articles.filter(article => article.id === id)
 		this.props.articleView(filterView);
 		this.props.history.push({pathname:'/articles/' + id});
 	}
 
 	render(){
-		
-		let { articles } = this.props
+	
 		let renderArticles;
 		
 		if (this.props && this.props.articles.length !== 0){
-			renderArticles = articles.map(article => {
+			renderArticles = this.props.articles.map(article => {
 			return(
 				<Link to={"/articles/" + article.id} key={article.id} >
 					<Article
@@ -44,7 +57,10 @@ class Articles extends Component {
 		})};
 		
 		return(
-			<div>	
+			<div>
+				<div>	
+					<button className='btn btn-primary' onClick={() => this.clickToSort()}> Sort! </button>
+				</div>
 				{renderArticles}				
 			</div>
 		);
