@@ -24,7 +24,7 @@ class Articles extends Component {
 			return 0;
 			});
 		console.log(this.props.articles)
-		this.props.history.push({pathname:'/articles/'});
+		this.props.history.push({pathname:'/articles'});
 
 	}
 
@@ -59,7 +59,7 @@ class Articles extends Component {
 		return(
 			<div>
 				<div>	
-					<button className='btn btn-primary' onClick={() => this.clickToSort()}> Sort! </button>
+					<button className='btn btn-secondary' onClick={() => this.clickToSort()}> Sort! </button>
 				</div>
 				{renderArticles}				
 			</div>
