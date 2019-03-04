@@ -41,7 +41,7 @@ export const fetchArticles = () => {
   }
 
   export const addArticle = (article) => {
-    console.log('C')
+   
     let data = {
       method: 'POST',
       headers: {
@@ -56,14 +56,13 @@ export const fetchArticles = () => {
       fetch(`${ API_URL }/articles`, data)
         .then(response => response.json())
         .then(article => {
-          console.log('D')
+         
           dispatch({
                   type: 'ADD_ARTICLE', 
                   payload: article
                 })})
         .catch(err => err)
     }
-    console.log('E')
   }
 
   export const deleteArticle = (id) => {
