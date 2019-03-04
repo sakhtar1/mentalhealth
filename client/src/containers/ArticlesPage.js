@@ -30,40 +30,39 @@ class ArticlesPage extends Component {
 
 
     render(){
-            const { article, likes } = this.props;
         
-            let  likekey  = article.likes === 1 ? 'like' : 'likes';
+            let  likekey  = this.props.article.likes === 1 ? 'like' : 'likes';
 
         return(
             <div className="articleshow">
 
-                <h1 className="title"> {article.title}</h1>
+                <h1 className="title"> {this.props.article.title}</h1>
                  <div>
                   <img 
                     className="image"
-                    src={article.image}
-                    alt={article.title}
+                    src={this.props.article.image}
+                    alt={this.props.article.title}
 
                     />
                 </div>
 
                 <br></br>
                 <div>
-                    <p className = "content"> {article.content}</p>
+                    <p className = "content"> {this.props.article.content}</p>
                 </div>
-                <p> Author: {article.author}</p>
+                <p> Author: {this.props.article.author}</p>
                 <br></br>
                 <div>
-                    <p> Date: { moment(article.created_at).format('MMMM Do YYYY') }</p>
+                    <p> Date: { moment(this.props.article.created_at).format('MMMM Do YYYY') }</p>
                 </div>
                 <br></br>
                 <div>
                     <input type='button' className= 'btn-primary' 
                     value={this.state.buttonLike} 
                     onChange={(event) => this.setState({buttonLike: event.target.value})} 
-                    onClick={this.handleClickLike.bind(this) } />
+                    onClick={this.handleClickLike} />
                       <div style={{display: 'inline', marginLeft: 10}}>
-                        {likes} {likekey}
+                        {this.props.likes} {likekey}
                       </div>
                 </div>
                 <br></br>
