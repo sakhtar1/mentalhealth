@@ -31,6 +31,7 @@ class Articles extends Component {
 	filterByLikes = () => {
 		let filterlike = this.props.articles.filter(article => article.likes > 0)
 		console.log(filterlike)
+		this.props.articleView(filterlike)
 		//this.props.history.push({pathname:'/articles'});
 	}
 	
@@ -67,7 +68,7 @@ class Articles extends Component {
 			<div>
 				<div>	
 					<button className='btn btn-secondary' onClick={() => this.clickToSort()}> Sort by Most Recent </button> 
-					<button id='filterlike' className='btn btn-secondary' onClick={this.filterByLikes}> Sort by Likes </button>
+					<button id='filterlike' className='btn btn-secondary' onClick={() => this.filterByLikes()}> Filter by Likes </button>
 				</div>
 				{renderArticles}				
 			</div>
