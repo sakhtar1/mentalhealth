@@ -26,6 +26,11 @@ class ArticlesPage extends Component {
         this.setState ({ buttonLike: 'Liked!' })
    };
 
+   handleClickBack = (event) => {
+        event.preventDefault()
+        this.props.history.push({pathname:'/articles/'});
+   }
+
 
 
 
@@ -63,6 +68,8 @@ class ArticlesPage extends Component {
                     onClick={this.handleClickLike} />
                       <div style={{display: 'inline', marginLeft: 10}}>
                         {this.props.likes} {likekey}
+                        <button id="back" className="btn-secondary" onClick={this.handleClickBack}>
+                        Back </button>
                       </div>
                 </div>
                 <br></br>
@@ -72,6 +79,7 @@ class ArticlesPage extends Component {
                             Remove Article
                           </button>
                         </p>
+        
                       </div>
             </div>
         )

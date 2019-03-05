@@ -59,6 +59,14 @@ h1 {
   border-color: #177d37;
 }
 
+#filterlike {
+    float: right; 
+}
+
+#back {
+    float: right; 
+}
+
 
 
 
