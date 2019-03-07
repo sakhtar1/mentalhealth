@@ -9,13 +9,18 @@ import Article from '../components/Article'
 
 class Articles extends Component {
 
+	state = {
+		articles: []
+	}
+
 	componentDidMount() {
 		this.props.fetchArticles()
+    ;
 	}
 	
 
-	clickToSort = () => {
-		this.props.articles.sort(function (a, b) {
+	clickToSort = (articles) => {
+		let sort = this.props.articles.splice().sort(function (a, b) {
 			 if (b.created_at < a.created_at) {
 				    return -1;
 				  }
@@ -23,16 +28,19 @@ class Articles extends Component {
 				    return 1;
 				  }
 			return 0;
-			});
-		console.log(this.props.articles)
-		this.props.history.push({pathname:'/articles'});
+			})
+	
+		this.setState ({sort});
+		//console.log(this.props.articles)
 	}
 
 	filterByLikes = () => {
-		let filterlike = this.props.articles.filter(article => article.likes > 0)
-		console.log(filterlike)
-		this.props.articleView(filterlike)
-		//this.props.history.push({pathname:'/articles'});
+		let filterLike = this.props.articles.filter(article => article.likes > 0);
+		let filter = this.props.articleView(filterLike);
+		console.log(filterLike);
+		this.setState({filter})
+		//alert("Updated")
+		
 	}
 	
 
@@ -45,7 +53,7 @@ class Articles extends Component {
 	}
 
 	render(){
-	
+		console.log(this.props.articles)
 		let renderArticles;
 		
 		if (this.props && this.props.articles.length !== 0){
