@@ -27,8 +27,8 @@ export const fetchArticles = () => {
         'Content-Type': 'application/json',
       }
     }
-    return dispatch => {
-      fetch(`${ API_URL }/articles`, data)
+    return function(dispatch) {
+       return fetch(`${ API_URL }/articles`, data)
         .then(response => response.json())
         .then(articles => {
           dispatch({

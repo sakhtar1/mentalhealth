@@ -14,13 +14,13 @@ class Articles extends Component {
 	}
 
 	componentDidMount() {
-		this.props.fetchArticles()
+		this.props.fetchArticles().then(() => this.setState({articles: this.props.articles}))
     ;
 	}
 	
 
-	clickToSort = (articles) => {
-		let sort = this.props.articles.splice().sort(function (a, b) {
+	clickToSort = () => {
+		let sort = [...this.props.articles].sort(function (a, b) {
 			 if (b.created_at < a.created_at) {
 				    return -1;
 				  }
@@ -29,16 +29,20 @@ class Articles extends Component {
 				  }
 			return 0;
 			})
+		console.log(sort)
 	
-		this.setState ({sort});
+		//this.props.history.push('/articles');
 		//console.log(this.props.articles)
+		this.setState({articles: sort})
 	}
 
 	filterByLikes = () => {
-		let filterLike = this.props.articles.filter(article => article.likes > 0);
-		let filter = this.props.articleView(filterLike);
+		let filterLike = this.props.articles.filter(article => article.likes > 0).sort(function(a, b) {
+			return a.likes - b.likes
+		})
+		//let filter = this.props.articleView(filterLike);
 		console.log(filterLike);
-		this.setState({filter})
+		this.setState({articles: filterLike})
 		//alert("Updated")
 		
 	}
@@ -56,8 +60,8 @@ class Articles extends Component {
 		console.log(this.props.articles)
 		let renderArticles;
 		
-		if (this.props && this.props.articles.length !== 0){
-			renderArticles = this.props.articles.map(article => {
+		if (this.state && this.state.articles.length !== 0){
+			renderArticles = this.state.articles.map(article => {
 			return(
 				<Link to={"/articles/" + article.id} key={article.id} >
 					<Article
