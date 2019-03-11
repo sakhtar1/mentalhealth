@@ -41,38 +41,38 @@ class Articles extends Component {
 	}
 
 	filterByLikes = () => {
-		let filterLike = this.props.articles.filter(article => article.likes > 0).sort(function(a, b) {
+		let filterLike = [...this.props.articles].filter(article => article.likes > 0).sort(function(a, b) {
 			return a.likes - b.likes
 		})
 		this.setState({articles: filterLike})
 		
 	}
 
-	filterByLeastLikes = () => {
-		let filterLeast = this.props.articles.sort(function(a, b) {
+	sortByLeastLikes = () => {
+		let sortLeast = [...this.props.articles].sort(function(a, b) {
 			return a.likes - b.likes
 		})
-		this.setState({articles: filterLeast})
+		this.setState({articles: sortLeast})
 		
 	}
 
-	filterByMostLikes = () => {
-		let filterMost = this.props.articles.sort(function(a, b) {
+	sortByMostLikes = () => {
+		let sortMost = [...this.props.articles].sort(function(a, b) {
 			return b.likes - a.likes
 		})
-		this.setState({articles: filterMost})
+		this.setState({articles: sortMost})
 		
 	}
 
-		showMenu = (event) => {
-		    event.preventDefault();
+	showMenu = (event) => {
+		 event.preventDefault();
 		    
-		    this.setState({ showMenu: true }, () => {
-		      document.addEventListener('click', this.closeMenu);
-		    });
-		  }
+		 this.setState({ showMenu: true }, () => {
+		    document.addEventListener('click', this.closeMenu);
+		  });
+	}
 	  
-	  closeMenu = (event) => {
+	closeMenu = (event) => {
 	    
 	    if (!this.dropdownMenu.contains(event.target)) {
 	      
@@ -81,7 +81,7 @@ class Articles extends Component {
 	      });  
 	      
 	    }
-	  }
+	 }
 
 	
 
@@ -117,15 +117,15 @@ class Articles extends Component {
 					  <br></br>
 					  <br></br>
 					  <div class="dropdown-trigger">
-				        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={this.showMenu}>
+				        <button className='btn btn-secondary' aria-haspopup="true" aria-controls="dropdown-menu" onClick={this.showMenu}>
 				          Filter by:
 				        </button>      
 				        {this.state.showMenu ? (
 				              <div className="menu" ref={(element) => {this.dropdownMenu = element;}}>
 				                <button class="dropdown-item" onClick={() => this.clickToSort()}> Most Recent Article </button>
 				                <button class="dropdown-item" onClick={() => this.filterByLikes()}> Only Likes </button>
-				                <button class="dropdown-item" onClick={() => this.filterByMostLikes()}> Most Likes </button>
-				                <button class="dropdown-item" onClick={() => this.filterByLeastLikes()}> Least Likes </button>
+				                <button class="dropdown-item" onClick={() => this.sortByMostLikes()}> Most Likes </button>
+				                <button class="dropdown-item" onClick={() => this.sortByLeastLikes()}> Least Likes </button>
 				              </div>
 				            ) : (null)}
 				      </div>
