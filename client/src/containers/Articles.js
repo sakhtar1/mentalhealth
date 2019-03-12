@@ -16,8 +16,6 @@ class Articles extends Component {
 	      articles: [],
 	      showMenu: false,
 	    }
-	    
-	    this.showMenu = this.showMenu.bind(this);
 	    this.closeMenu = this.closeMenu.bind(this);
 	  }
 
@@ -117,7 +115,7 @@ class Articles extends Component {
 					  <br></br>
 					  <br></br>
 					  <div class="dropdown-trigger">
-				        <button className='btn btn-secondary' aria-haspopup="true" aria-controls="dropdown-menu" onClick={this.showMenu}>
+				        <button className='btn btn-secondary' aria-haspopup="true" aria-controls="dropdown-menu" onClick={this.showMenu.bind(this)}>
 				          Filter by:
 				        </button>      
 				        {this.state.showMenu ? (
