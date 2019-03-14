@@ -9,24 +9,26 @@ import Article from '../components/Article'
 
 class Articles extends Component {
 
-	constructor() {
-	    super();
-	    
-	    this.state = {
-	      articles: [],
-	      showMenu: false,
-	    }
-	    this.closeMenu = this.closeMenu.bind(this);
-	  }
+	   
+	 constructor(props){
+      	super(props)
+     	 this.state = {articles: []}
+      	
+  }
 
 	componentDidMount() {
-		this.props.fetchArticles().then(() => this.setState({articles: this.props.articles}))
-    ;
+		this.props.fetchArticles();
 	}
+	
+	see_articles(){
+  		this.setState({articles: this.props.articles})
+  }
 	
 
 	clickToSort = () => {
+	
 		let sortArticles = [...this.props.articles].sort(function (a, b) {
+	
 			 if (b.created_at < a.created_at) {
 				    return -1;
 				  }
@@ -35,53 +37,21 @@ class Articles extends Component {
 				  }
 			return 0;
 			})
-		this.setState({articles: sortArticles})
+		console.log(sortArticles);
+		this.setState({articles: [...sortArticles]})
+
 	}
 
 	filterByLikes = () => {
-		let filterLike = [...this.props.articles].filter(article => article.likes > 0).sort(function(a, b) {
-			return a.likes - b.likes
-		})
-		this.setState({articles: filterLike})
-		
-	}
+		let filterLike = this.state.articles.filter(article => article.likes > 0).sort(function(a, b) {	
+		return a.likes - b.likes
+			})
+		console.log(filterLike);	
+		this.setState({articles: [...filterLike]})			
 
-	sortByLeastLikes = () => {
-		let sortLeast = [...this.props.articles].sort(function(a, b) {
-			return a.likes - b.likes
-		})
-		this.setState({articles: sortLeast})
-		
-	}
 
-	sortByMostLikes = () => {
-		let sortMost = [...this.props.articles].sort(function(a, b) {
-			return b.likes - a.likes
-		})
-		this.setState({articles: sortMost})
-		
-	}
+ 	}	
 
-	showMenu = (event) => {
-		 event.preventDefault();
-		    
-		 this.setState({ showMenu: true }, () => {
-		    document.addEventListener('click', this.closeMenu);
-		  });
-	}
-	  
-	closeMenu = (event) => {
-	    
-	    if (!this.dropdownMenu.contains(event.target)) {
-	      
-	      this.setState({ showMenu: false }, () => {
-	        document.removeEventListener('click', this.closeMenu);
-	      });  
-	      
-	    }
-	 }
-
-	
 
 	selectArticle = (id) => {
 		let filterView = this.props.articles.filter(article => article.id === id)
@@ -89,10 +59,24 @@ class Articles extends Component {
 		this.props.history.push({pathname:'/articles/' + id});
 	}
 
+
+	componentWillReceiveProps(props){
+		console.log("props", props)
+		this.setState({
+			articles: props.articles
+		})
+	}
+
+
 	render(){
 		let renderArticles;
 		
-		if (this.state && this.state.articles.length !== 0){
+		
+		console.log(this.state.articles, this.state.articles.length !== 0)
+
+
+
+		if (this.state.articles.length !== 0){
 			renderArticles = this.state.articles.map(article => {
 			return(
 				<Link to={"/articles/" + article.id} key={article.id} >
@@ -105,31 +89,24 @@ class Articles extends Component {
 					clicked={() => this.selectArticle(article.id)} />
 					<hr/>
 				</Link>	
-			);
-		})};
+				);
+			})
+		};
 		
+		
+	
 		return(
 			<div>
-				<div>	
-					<button className='btn btn-secondary' onClick={() => this.clickToSort()}> Sort by Most Recent </button> 
+				<div>
+				
+					<button className='btn btn-secondary' onClick={() => this.clickToSort()}> 
+					Sort by Most Recent </button> 
 					  <br></br>
 					  <br></br>
-					  <div class="dropdown-trigger">
-				        <button className='btn btn-secondary' aria-haspopup="true" aria-controls="dropdown-menu" onClick={this.showMenu.bind(this)}>
-				          Filter by:
-				        </button>      
-				        {this.state.showMenu ? (
-				              <div className="menu" ref={(element) => {this.dropdownMenu = element;}}>
-				                <button class="dropdown-item" onClick={() => this.clickToSort()}> Most Recent Article </button>
-				                <button class="dropdown-item" onClick={() => this.filterByLikes()}> Only Likes </button>
-				                <button class="dropdown-item" onClick={() => this.sortByMostLikes()}> Most Likes </button>
-				                <button class="dropdown-item" onClick={() => this.sortByLeastLikes()}> Least Likes </button>
-				              </div>
-				            ) : (null)}
-				      </div>
-			
+					 <button className='btn btn-secondary' onClick={() => this.filterByLikes()}> Filter by Likes </button> 
+					
 				</div>
-				{renderArticles}				
+				{renderArticles} 				
 			</div>
 		);
 	}
