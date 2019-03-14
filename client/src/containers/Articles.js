@@ -20,11 +20,7 @@ class Articles extends Component {
 		this.props.fetchArticles();
 	}
 	
-	see_articles(){
-  		this.setState({articles: this.props.articles})
-  }
 	
-
 	clickToSort = () => {
 	
 		let sortArticles = [...this.props.articles].sort(function (a, b) {
@@ -73,6 +69,7 @@ class Articles extends Component {
 		
 		
 		console.log(this.state.articles, this.state.articles.length !== 0)
+		
 
 
 
