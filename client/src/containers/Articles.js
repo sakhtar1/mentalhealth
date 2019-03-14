@@ -69,8 +69,6 @@ class Articles extends Component {
 		
 		
 		console.log(this.state.articles, this.state.articles.length !== 0)
-		
-
 
 
 		if (this.state.articles.length !== 0){
