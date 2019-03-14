@@ -19,6 +19,13 @@ class Articles extends Component {
 	componentDidMount() {
 		this.props.fetchArticles();
 	}
+
+	componentWillReceiveProps(props){
+		console.log("props", props)
+		this.setState({
+			articles: props.articles
+		})
+	}
 	
 	
 	clickToSort = () => {
@@ -50,17 +57,9 @@ class Articles extends Component {
 
 
 	selectArticle = (id) => {
-		let filterView = this.props.articles.filter(article => article.id === id)
+		let filterView = this.state.articles.filter(article => article.id === id)
 		this.props.articleView(filterView);
 		this.props.history.push({pathname:'/articles/' + id});
-	}
-
-
-	componentWillReceiveProps(props){
-		console.log("props", props)
-		this.setState({
-			articles: props.articles
-		})
 	}
 
 
@@ -86,8 +85,7 @@ class Articles extends Component {
 				</Link>	
 				);
 			})
-		};
-		
+		} 
 		
 	
 		return(
