@@ -9,6 +9,7 @@ class ArticlesPage extends Component {
 
      state = {
         buttonLike: 'Like!',
+        
     }
     
     handleClickDelete = (event) => {
@@ -32,14 +33,39 @@ class ArticlesPage extends Component {
    }
 
 
+    // onClickaddName = () => {
+    //     let newIndex = Math.floor(Math.random() * Math.floor(this.state.names.length));
+    //     this.setState({currentNameIndex: newIndex})
+    //     }
+
+    // addName = () => {
+    //     let names = this.state.names
+    //    let newNames = names.concat(this.state.testName)
+    //    //names.push(this.state.testName)
+    //     this.setState({name: this.state.testName, names: newNames, testName: ''})
+    // }
+
+    // handleChange = (e) => {
+    //     this.setState({testName: e.target.value})
+    // }
+
+    // handleClickLikes =(event) => {
+    //     event.preventDefault()
+    //     this.setState ({bLike: this.state.bLike + 1})
+    // }
+
+
 
 
     render(){
         
             let  likekey  = this.props.article.likes === 1 ? 'like' : 'likes';
+           
 
         return(
             <div className="articleshow">
+
+                
 
                 <h1 className="title"> {this.props.article.title}</h1>
                  <div>
@@ -81,6 +107,8 @@ class ArticlesPage extends Component {
                         </p>
         
                       </div>
+               
+          
             </div>
         )
     }

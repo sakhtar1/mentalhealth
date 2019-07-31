@@ -9,11 +9,13 @@ import Article from '../components/Article'
 
 class Articles extends Component {
 
-	   
+   
 	 constructor(props){
       	super(props)
-     	 this.state = {articles: []}
-      	
+     	 this.state = {
+     	 	articles: [],
+     	 }
+     
   }
 
 	componentDidMount() {
@@ -21,7 +23,6 @@ class Articles extends Component {
 	}
 
 	componentWillReceiveProps(props){
-		console.log("props", props)
 		this.setState({
 			articles: props.articles
 		})
@@ -40,7 +41,7 @@ class Articles extends Component {
 				  }
 			return 0;
 			})
-		console.log(sortArticles);
+	
 		this.setState({articles: [...sortArticles]})
 
 	}
@@ -49,7 +50,7 @@ class Articles extends Component {
 		let filterLike = this.state.articles.filter(article => article.likes > 0).sort(function(a, b) {	
 		return a.likes - b.likes
 			})
-		console.log(filterLike);	
+
 		this.setState({articles: [...filterLike]})			
 
 
@@ -63,13 +64,11 @@ class Articles extends Component {
 	}
 
 
+
 	render(){
 		let renderArticles;
 		
 		
-		console.log(this.state.articles, this.state.articles.length !== 0)
-
-
 		if (this.state.articles.length !== 0){
 			renderArticles = this.state.articles.map(article => {
 			return(
@@ -85,21 +84,22 @@ class Articles extends Component {
 				</Link>	
 				);
 			})
-		} 
-		
+		} 	
 	
 		return(
 			<div>
-				<div>
-				
-					<button className='btn btn-secondary' onClick={() => this.clickToSort()}> 
+				<div>	
+					<button className='btn btn-secondary' onClick={this.clickToSort}> 
 					Sort by Most Recent </button> 
 					  <br></br>
 					  <br></br>
-					 <button className='btn btn-secondary' onClick={() => this.filterByLikes()}> Filter by Likes </button> 
-					
+					 <button className='btn btn-secondary' onClick={this.filterByLikes}> Filter by Likes </button> 	
 				</div>
-				{renderArticles} 				
+				 <br></br>
+
+				<div>
+					{renderArticles} 
+				</div>				
 			</div>
 		);
 	}
